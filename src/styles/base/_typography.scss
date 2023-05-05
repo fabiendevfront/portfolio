@@ -1,0 +1,21 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap');
+
+/********************/
+/* TYPOGRAPHY STYLE */
+/********************/
+
+body {
+    font-family: variables.$font-default;
+    @include mixins.font-size(16px);
+    font-weight: 400;
+    line-height: 1.5;
+    color: variables.$black;
+}
+
+a {
+    text-decoration: none;
+}
