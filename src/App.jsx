@@ -1,7 +1,12 @@
+import Layout from "./layout/Layout";
+import AppRouter from "./router/AppRouter.jsx";
+
 const App = () => {
     return (
-        <div>
-            <h1>Portfolio</h1>
+        <div className="app">
+            <Layout>
+                <AppRouter />
+            </Layout>
         </div>
     );
 };
