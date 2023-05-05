@@ -1,0 +1,19 @@
+[
+	{
+		"id": "",
+        "name": "",
+        "subtitle": "",
+        "description": "",
+        "categorie": "",
+        "thumbnail": "",
+        "gitlab": "",
+        "github": "",
+        "url": "",
+        "featured": "",
+        "pictures": [
+			"img1.jpg",
+			"img2.jpg",
+            "img3.jpg"
+		]
+    }
+]
