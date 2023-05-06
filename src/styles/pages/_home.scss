@@ -1,0 +1,13 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+/********************/
+/* HOME PAGE STYLE */
+/*******************/
+
+.home {
+
+    &__hero {
+        padding-top: 50px;
+    }
+}

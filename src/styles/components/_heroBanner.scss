@@ -1,0 +1,41 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+/********************************/
+/* HERO BANNER COMPONENT STYLE */
+/*******************************/
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    &__intro {
+        @include mixins.font-size(40px);
+        font-family: variables.$font-secondary;
+        color: variables.$primary-color;
+        margin: 0;
+    }
+
+    &__title {
+        font-family: variables.$font-title;
+        @include mixins.font-size(80px);
+        font-weight: 800;
+        line-height: 1;
+        margin: 0;
+    }
+
+    &__subtitle {
+        @include mixins.font-size(20px);
+        width: 80%;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    &__cta {
+        display: flex;
+        gap: 40px;
+    }
+}
