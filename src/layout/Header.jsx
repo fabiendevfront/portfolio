@@ -6,7 +6,7 @@ const Header = () => {
         <header className="header">
             <Link to="/" className="header__link">
                 <h1>
-                    <img src={logo} className="header__logo" alt="Logo du site Kasa" />
+                    <img src={logo} className="header__logo" alt="Logo du header" />
                 </h1>
             </Link>
             <nav className="header__nav">

@@ -12,9 +12,10 @@
 
     &__hero {
         padding-top: 50px;
+        z-index: 10;
     }
 
     &__cover {
-
+        margin-top: -50px;
     }
 }
