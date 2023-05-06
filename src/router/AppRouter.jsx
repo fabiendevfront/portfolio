@@ -1,6 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
-import MyWorks from "../pages/MyWorks";
+import About from "../pages/About";
+import Skills from "../pages/Skills";
+import Portfolio from "../pages/Portfolio";
+import Contact from "../pages/Contact";
 import Work from "../pages/Work";
 import Error404 from "../pages/Error404";
 
@@ -13,7 +16,10 @@ const AppRouter = () => {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/works" element={<MyWorks />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/work/:id" element={<Work />} />
             {/* path="*" if the path does not correspond to any route declared above */}
             <Route path="*" element={<Error404 />} />
