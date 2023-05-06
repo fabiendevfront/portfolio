@@ -3,7 +3,7 @@ import LinkButton from "../components/LinkButton";
 const HeroBanner = () => {
     return (
         <section className="hero">
-            <p className="hero__intro">Bienvenue ! Je suis Fabien. </p>
+            <p className="hero__intro">Bienvenue ! Je suis Fabien</p>
             <h2 className="hero__title">Développeur front-end</h2>
             <p className="hero__subtitle">
                 Je suis passionné par la création d&apos;interfaces utilisateur intuitives et fonctionnelles, avec de bonnes bases en ReactJS.<br />

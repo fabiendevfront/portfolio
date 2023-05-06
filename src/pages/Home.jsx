@@ -1,4 +1,5 @@
 import HeroBanner from "../components/HeroBanner";
+import mountainCover from "../assets/images/mountain.png";
 
 const Home = () => {
     return (
@@ -7,7 +8,7 @@ const Home = () => {
                 <HeroBanner/>
             </div>
             <div className="home__cover">
-                
+                <img src={mountainCover} alt="Image de couverture montagnes" />
             </div>
         </div>
     );
