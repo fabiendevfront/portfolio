@@ -25,8 +25,13 @@ body {
 }
 
 .main {
+    padding: 30px 5% 30px 5%;
     flex: 1;
     background: variables.$bg-light-grey;
+
+    &--mint {
+        background: variables.$primary-color;
+    }
 }
 
 html {

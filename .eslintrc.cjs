@@ -13,6 +13,7 @@ module.exports = {
         "react-refresh/only-export-components": "warn",
         "indent": ["error", 4],
         "quotes": ["error", "double"],
-        "semi": ["error", "always"]
+        "semi": ["error", "always"],
+        "react/no-unescaped-entities"
     },
 };

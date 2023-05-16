@@ -1,0 +1,40 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+/********************/
+/* ABOUT PAGE STYLE */
+/*******************/
+
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+
+    &__head,
+    &__interests {
+        width: 100%;
+    }
+
+    &__title,
+    &__interests-title {
+        font-family: variables.$font-secondary;
+        @include mixins.font-size(50px);
+        color: variables.$black;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    &__description {
+        @include mixins.font-size(18px);
+        color: variables.$white;
+    }
+
+    &__interests-items {
+        width: 60%;
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-around;
+        gap: 30px;
+    }
+}

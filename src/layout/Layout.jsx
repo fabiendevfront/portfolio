@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
     return (
         <>
             <Header />
-            <main className={location.pathname === "/" ? "main main--home" : "main"}>{children}</main>
+            <main className={location.pathname === "/about" ? "main main--mint" : "main"}>{children}</main>
             <Footer />
         </>
     );

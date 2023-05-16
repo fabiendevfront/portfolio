@@ -1,0 +1,31 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+/**********************************/
+/* INTEREST CARD COMPONENT STYLE */
+/*********************************/
+
+.interest-card {
+    background-color: variables.$white;
+    border-radius: 10px;
+    padding: 20px;
+    // width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    &__icon {
+        @include mixins.font-size(45px);
+        color: variables.$black;
+    }
+
+    &__label {
+        @include mixins.font-size(16px);
+        text-align: center;
+        font-weight: 700;
+        color: variables.$black;
+        margin: 0;
+    }
+}

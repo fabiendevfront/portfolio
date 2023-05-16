@@ -1,0 +1,17 @@
+[
+	{
+        "id": "1",
+		"icon": "fas fa-mountain",
+        "label": "Randonnée en montagne"
+    },
+    {
+        "id": "2",
+		"icon": "fas fa-camera-retro",
+        "label": "Photographie de nature"
+    },
+    {
+        "id": "3",
+		"icon": "fas fa-map-marked-alt",
+        "label": "Projets géo-participatifs"
+    }
+]
