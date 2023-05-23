@@ -2,9 +2,9 @@ import forest from "../assets/images/forest.png";
 import footerLogo from "../assets/footerLogo.png";
 import { Link } from "react-router-dom";
 
-const Footer = () => {
+const Footer = ({ footerStyle }) => {
     return (
-        <div className="footer">
+        <div className={footerStyle}>
             <div className="footer__background">
                 <img src={forest} alt="Visuel montagne" className="footer__picture" />
             </div>

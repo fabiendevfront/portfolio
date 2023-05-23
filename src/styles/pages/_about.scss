@@ -8,11 +8,14 @@
 .about {
     display: flex;
     flex-direction: column;
-    gap: 50px;
-    align-items: center;
+    gap: 40px;
 
-    &__head,
-    &__interests {
+    @include mixins.large-break {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    @include mixins.medium-break {
         width: 100%;
     }
 
@@ -25,16 +28,78 @@
         margin: 0;
     }
 
+    &__head {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+
+        @include mixins.large-break {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+    }
+
     &__description {
-        @include mixins.font-size(18px);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        @include mixins.large-break {
+            width: 100%;
+        }
+    }
+
+    &__photography {
+        width: 800px;
+        height: 700px;
+        border-radius: 10px;
+
+        @include mixins.large-break {
+            width: 100%;
+            height: 400px
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    }
+
+    &__paragraph {
+        @include mixins.font-size(20px);
+        line-height: 1.8;
         color: variables.$white;
+        margin: 0;
+
+        &--big {
+            @include mixins.font-size(22px);
+            font-weight: 700;
+        }
+    }
+
+    &__cta {
+        margin-top: 50px;
+    }
+
+    &__interests {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     &__interests-items {
-        width: 60%;
+        width: 100%;
         margin-top: 50px;
         display: flex;
         justify-content: space-around;
         gap: 30px;
+
+        @include mixins.large-break {
+            width: 100%;
+        }
     }
 }

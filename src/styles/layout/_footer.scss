@@ -8,6 +8,10 @@
 .footer {
     background-color: #F2F2F2;
 
+    &--mint {
+        background-color: variables.$primary-color;
+    }
+
     &__background {
         margin-top: -80px;
         margin-bottom: -8px;

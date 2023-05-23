@@ -9,7 +9,7 @@ const HeroBanner = () => {
                 Passionné par la création d'interfaces utilisateur intuitives et fonctionnelles, avec de bonnes bases en ReactJS.
             </p>
             <div className="hero__cta">
-                <LinkButton btnLink="/about" btnStyle="btn btn--home" label="En savoir plus" />
+                <LinkButton btnLink="/about" btnStyle="btn btn--home" label="En savoir plus sur moi" />
             </div>
         </section>
     );
