@@ -18,34 +18,34 @@ const AppRouter = () => {
     const location = useLocation();
 
     return (
-            <Routes>
-                <Route
-                    path="/"
-                    element={<Animation key={location.pathname} variants={popUp}><Home /></Animation>}
-                />
-                <Route
-                    path="/about"
-                    element={<Animation key={location.pathname} variants={slideLeft}><About /></Animation>}
-                />
-                <Route
-                    path="/skills"
-                    element={<Animation key={location.pathname} variants={slideLeft}><Skills /></Animation>}
-                />
-                <Route
-                    path="/portfolio"
-                    element={<Animation key={location.pathname} variants={slideLeft}><Portfolio /></Animation>}
-                />
-                <Route
-                    path="/contact"
-                    element={<Animation key={location.pathname} variants={slideLeft}><Contact /></Animation>}
-                />
-                <Route
-                    path="/work/:id"
-                    element={<Animation key={location.pathname} variants={slideLeft}><Work /></Animation>}
-                />
-                {/* path="*" if the path does not correspond to any route declared above */}
-                <Route path="*" element={<Error404 />} />
-            </Routes>
+        <Routes>
+            <Route
+                path="/"
+                element={<Animation key={location.pathname} variants={popUp}><Home /></Animation>}
+            />
+            <Route
+                path="/about"
+                element={<Animation key={location.pathname} variants={slideLeft}><About /></Animation>}
+            />
+            <Route
+                path="/skills"
+                element={<Animation key={location.pathname} variants={slideLeft}><Skills /></Animation>}
+            />
+            <Route
+                path="/portfolio"
+                element={<Animation key={location.pathname} variants={slideLeft}><Portfolio /></Animation>}
+            />
+            <Route
+                path="/contact"
+                element={<Animation key={location.pathname} variants={slideLeft}><Contact /></Animation>}
+            />
+            <Route
+                path="/work/:id"
+                element={<Animation key={location.pathname} variants={slideLeft}><Work /></Animation>}
+            />
+            {/* path="*" if the path does not correspond to any route declared above */}
+            <Route path="*" element={<Error404 />} />
+        </Routes>
     );
 };
 

@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 
 const Animation = ({ children, variants, ...props }) => {
-    console.log(variants)
+
     return (
         <AnimatePresence mode="wait">
             <motion.div
@@ -10,6 +10,7 @@ const Animation = ({ children, variants, ...props }) => {
                 animate="animate"
                 exit="exit"
                 transition={{ ...variants.transition }}
+                style={{ width: "100%", overflowX: "hidden" }}
                 {...props}
             >
                 {children}

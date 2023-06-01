@@ -1,6 +1,6 @@
 import { useFetch } from "../services/useFetch.jsx";
 import InterestCard from "../components/InterestCard";
-import pictureProfil from "../assets/images/pictureProfil.jpg"
+import pictureProfil from "../assets/images/pictureProfil.jpg";
 
 const About = () => {
     const { data, loading, error } = useFetch("/data/interests.json");

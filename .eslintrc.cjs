@@ -14,6 +14,6 @@ module.exports = {
         "indent": ["error", 4],
         "quotes": ["error", "double"],
         "semi": ["error", "always"],
-        "react/no-unescaped-entities"
-    },
+        "react/no-unescaped-entities": "error"
+    }
 };

@@ -10,6 +10,7 @@ import PropTypes from "prop-types";
  */
 const Layout = ({ children }) => {
     const location = useLocation();
+
     return (
         <>
             <Header />
