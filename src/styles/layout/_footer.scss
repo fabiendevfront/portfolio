@@ -39,6 +39,7 @@
     &__social {
         display: flex;
         justify-content: center;
+        align-items: center;
         width: 45%;
 
         &-item {
@@ -48,18 +49,28 @@
 
         &-link {
             color: #ffffff;
+        }
+
+        &-icon {
+            @include mixins.font-size(30px);
 
             &:hover,
             &:focus,
             &:active {
-                color: variables.$primary-color;
+                path {
+                    color: variables.$primary-color;
+                    transition: all .3s ease-in-out;
+                }
             }
 
             &--github {
                 &:hover,
                 &:focus,
                 &:active {
-                    color: #6865E9;
+                    path {
+                        color: #6865E9;
+                        transition: all .3s ease-in-out;
+                    }
                 }
             }
 
@@ -67,13 +78,12 @@
                 &:hover,
                 &:focus,
                 &:active {
-                    color: #0a66c2;
+                    path {
+                        color: #0a66c2;
+                        transition: all .3s ease-in-out;
+                    }
                 }
             }
-        }
-
-        &-icon {
-            @include mixins.font-size(30px);
         }
     }
 

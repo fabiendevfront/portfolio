@@ -15,11 +15,6 @@
     align-items: center;
     gap: 10px;
 
-    &__icon {
-        @include mixins.font-size(45px);
-        color: variables.$black;
-    }
-
     &__label {
         @include mixins.font-size(16px);
         text-align: center;

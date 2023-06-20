@@ -1,3 +1,4 @@
+import { Icon } from "@iconify/react";
 import forest from "../assets/images/forest.png";
 import footerLogo from "../assets/footerLogo.png";
 import { Link } from "react-router-dom";
@@ -17,13 +18,13 @@ const Footer = ({ footerStyle }) => {
                     </div>
                     <nav className="footer__social">
                         <div className="footer__social-item">
-                            <a href="https://github.com/fabiendevfront" className="footer__social-link footer__social-link--github"><i className="footer__social-icon fab fa-github"></i></a>
+                            <a href="https://github.com/fabiendevfront" className="footer__social-link"><Icon icon="bi:github" color="white" width="35" height="35" className="footer__social-icon footer__social-icon--github" /></a>
                         </div>
                         <div className="footer__social-item">
-                            <a href="https://www.linkedin.com/in/fabien-ducousso/" className="footer__social-link footer__social-link--linkedin"><i className="footer__social-icon fab fa-linkedin-in"></i></a>
+                            <a href="https://www.linkedin.com/in/fabien-ducousso/" className="footer__social-link"><Icon icon="bi:linkedin" color="white" width="35" height="35" className="footer__social-icon footer__social-icon--linkedin" /></a>
                         </div>
                         <div className="footer__social-item">
-                            <a href="mailto:f.ducousso@protonmail.com" className="footer__social-link"><i className="footer__social-icon far fa-envelope"></i></a>
+                            <a href="mailto:f.ducousso@protonmail.com" className="footer__social-link"><Icon icon="bi:envelope-fill" color="white" width="40" height="40" className="footer__social-icon" /></a>
                         </div>
                     </nav>
                     <div className="footer__copyright">
