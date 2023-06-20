@@ -5,9 +5,10 @@
         "subtitle": "Site de randonnée",
         "description": "Le site Mendia recense des parcours de randonnées dans les Pyrénées. Il est composé d’un front office, d’un back-office partagé entre utilisateurs et administrateurs avec deux niveaux de droits. En plus des langages de développement, j'ai utilisé pour les cartes la librairie Javascript Leaflet ainsi que les API Nominatim, Adresse et pour le module météo l'API OpenWeatherMap.Ce projet m'a permis de valider le titre professionnel de développeur web/web mobile en juillet 2020.",
         "categories": [
-            "Projet",
-            "PHP",
-            "JavaScript"
+            "skill-icons:php-light",
+            "skill-icons:javascript",
+            "skill-icons:alpinejs-light",
+            "skill-icons:sass"
         ],
         "thumbnail": "mendia.jpg",
         "gitlab": "https://gitlab.com/fabiendev/mendia",
@@ -27,10 +28,9 @@
         "subtitle": "Site de soutien scolaire",
         "description": "Site de soutien scolaire pour une entreprise de services à la personne. Création de l'identité visuelle, mise en place de l'hébergement, installation de Wordpress, aide à la création du contenu, adaptation d'un thème, création mise en place d'un système de paiement en ligne via Stripe. Aide pour la communication et au référencement : création d'une page Facebook avec design d'une bannière, création d'une page Google My Business et mise en place de Google Search Console et Analytics.",
         "categories": [
-            "Projet",
-            "Wordpress"
+            "skill-icons:wordpress"
         ],
-        "thumbnail": "madam-school.jpg",
+        "thumbnail": "madamschool.jpg",
         "gitlab": "",
         "github": "",
         "url": "https://madamschool.fr/",
@@ -48,9 +48,10 @@
         "subtitle": "Projet 2 de la formation OpenClassrooms - Transformez une maquette en site web avec HTML & CSS",
         "description": "Compétences évaluées : Intégrer du contenu conformément à une maquette; Implémenter une interface responsive",
         "categories": [
-            "Projet"
+            "skill-icons:html",
+            "skill-icons:css"
         ],
-        "thumbnail": "booki.jpg",
+        "thumbnail": "booki.png",
         "gitlab": "",
         "github": "https://github.com/fabiendevfront/booki",
         "url": "https://booki-fabiendevfront.vercel.app/",
@@ -68,9 +69,10 @@
         "subtitle": "Projet 3 de la formation OpenClassrooms - Dynamisez une page web avec des animations CSS",
         "description": "Compétences évaluées : Mettre en œuvre des effets CSS graphiques avancés; Mettre en place une structure de navigation pour un site web; Assurer la cohérence graphique d'un site web; Utiliser un système de gestion de versions pour le suivi du projet et son hébergement; Mettre en place son environnement Front-End",
         "categories": [
-            "Projet"
+            "skill-icons:html",
+            "skill-icons:sass"
         ],
-        "thumbnail": "ohmyfood.jpg",
+        "thumbnail": "ohmyfood.png",
         "gitlab": "",
         "github": "https://github.com/fabiendevfront/oh_my_food",
         "url": "https://oh-my-food-fabiendevfront.vercel.app/",
@@ -88,10 +90,10 @@
         "subtitle": "Projet 4 de la formation OpenClassrooms - Créez une landing page avec Javascript",
         "description": "Compétences évaluées : Programmer en JavaScript",
         "categories": [
-            "Projet",
-            "JavaScript"
+            "skill-icons:javascript",
+            "skill-icons:sass"
         ],
-        "thumbnail": "gameon.jpg",
+        "thumbnail": "gameon.png",
         "gitlab": "",
         "github": "https://github.com/fabiendevfront/game_on",
         "url": "https://game-on-fabiendevfront.vercel.app/",
@@ -109,10 +111,10 @@
         "subtitle": "Projet 6 de la formation OpenClassrooms - Créez un site accessible pour une plateforme de photographes",
         "description": "Compétences évaluées : Assurer l'accessibilité d'un site web; Gérer les évènements d'un site avec JavaScript; Développer une application web modulaire avec des design patterns; Ecrire du code JavaScript maintenable",
         "categories": [
-            "Projet",
-            "JavaScript"
+            "skill-icons:javascript",
+            "skill-icons:sass"
         ],
-        "thumbnail": "fisheye.jpg",
+        "thumbnail": "fisheye.png",
         "gitlab": "",
         "github": "https://github.com/fabiendevfront/fisheye",
         "url": "https://fisheye-fabiendevfront.vercel.app/",
@@ -130,10 +132,10 @@
         "subtitle": "Projet 7 de la formation OpenClassrooms - Développez un algorithme de recherche en JavaScript",
         "description": "Compétences évaluées : Analyser un problème informatique; Développer un algorithme pour résoudre un problème",
         "categories": [
-            "Projet",
-            "JavaScript"
+            "skill-icons:javascript",
+            "skill-icons:sass"
         ],
-        "thumbnail": "lespetitsplats.jpg",
+        "thumbnail": "lespetitsplats.png",
         "gitlab": "",
         "github": "https://github.com/fabiendevfront/les_petits_plats",
         "url": "https://les-petits-plats-fabiendevfront.vercel.app/",
@@ -151,10 +153,10 @@
         "subtitle": "Projet 9 de la formation OpenClassrooms - Débuggez et testez un SaaS RH",
         "description": "Compétences évaluées : Débugger une application web avec le Chrome Debugger; Ecrire des tests unitaires avec JavaScript; Ecrire des tests d'intégration avec JavaScript; Rédiger un plan de test end-to-end manuel",
         "categories": [
-            "Projet",
-            "JavaScript"
+            "skill-icons:javascript",
+            "skill-icons:sass"
         ],
-        "thumbnail": "billed.jpg",
+        "thumbnail": "billed.png",
         "gitlab": "",
         "github": "https://github.com/fabiendevfront/billed_app",
         "url": "",
@@ -172,9 +174,10 @@
         "subtitle": "Projet 10 de la formation OpenClassrooms - Définissez les besoins pour une app de soutien scolaire",
         "description": "Compétences évaluées : Modéliser une solution technique pour un client; Créer une maquette pour un client; Contribuer à un projet en utilisant une méthodologie agile; Identifier les besoins de l'application à partir d'un cahier des charges",
         "categories": [
-            "Gestion de projet"
+            "skill-icons:figma-dark",
+            "logos:notion-icon"
         ],
-        "thumbnail": "learn@home.jpg",
+        "thumbnail": "learn@home.png",
         "gitlab": "",
         "github": "",
         "url": "https://www.figma.com/file/w7QCjfSiJKzDcvVTOKe0TI/Learn%40Home?type=design&node-id=0%3A1&t=IMNmRObDMV1u5xUO-1",
@@ -192,10 +195,10 @@
         "subtitle": "Projet 11 de la formation OpenClassrooms - Développez une application Web avec React et React Router",
         "description": "Compétences évaluées : Créer des composants avec React; Développer les routes d'une application web avec React Router; Initialiser une application web avec un framework",
         "categories": [
-            "Projet",
-            "React"
+            "skill-icons:react-dark",
+            "skill-icons:sass"
         ],
-        "thumbnail": "kasa.jpg",
+        "thumbnail": "kasa.png",
         "gitlab": "",
         "github": "https://github.com/fabiendevfront/kasa",
         "url": "https://kasa-fabiendevfront.vercel.app/",
@@ -209,14 +212,14 @@
     },
     {
 		"id": "11",
-        "name": "Sportsee",
+        "name": "SportSee",
         "subtitle": "Projet 12 de la formation OpenClassrooms - Développez un tableau de bord d'analytics avec React",
         "description": "Compétences évaluées : Assurer la qualité des données d'une application; Développer des éléments graphiques avancés à l'aide de bibliothèques JavaScript; Interagir avec un service Web",
         "categories": [
-            "Projet",
-            "React"
+            "skill-icons:react-dark",
+            "skill-icons:sass"
         ],
-        "thumbnail": "sportsee.jpg",
+        "thumbnail": "sportsee.png",
         "gitlab": "",
         "github": "https://github.com/fabiendevfront/sportSee",
         "url": "",
@@ -234,10 +237,11 @@
         "subtitle": "Projet 13 de la formation OpenClassrooms - Utilisez une API pour un compte utilisateur bancaire avec React",
         "description": "Compétences évaluées : S'authentifier à une API; Implémenter un gestionnaire d'état dans une application React; Intéragir avec une API; Modéliser une API",
         "categories": [
-            "Projet",
-            "React"
+            "skill-icons:react-dark",
+            "skill-icons:sass"
+
         ],
-        "thumbnail": "argentbank.jpg",
+        "thumbnail": "argentbank.png",
         "gitlab": "",
         "github": "https://github.com/fabiendevfront/argentBank",
         "url": "",
@@ -255,10 +259,10 @@
         "subtitle": "Projet 14 de la formation OpenClassrooms - Faites passer une librairie jQuery vers React",
         "description": "Compétences évaluées : Mettre en place son environnement Front-End; Produire de la documentation technique pour une application; Analyser la performance d'une application web; Déployer une application front-end; Refondre une application pour réduire la dette technique",
         "categories": [
-            "Projet",
-            "React"
+            "skill-icons:react-dark",
+            "skill-icons:sass"
         ],
-        "thumbnail": "hrnet.jpg",
+        "thumbnail": "hrnet.png",
         "gitlab": "",
         "github": "https://github.com/fabiendevfront/hrnet",
         "url": "https://hrnet-fabiendevfront.vercel.app/",
@@ -272,14 +276,14 @@
     },
     {
 		"id": "14",
-        "name": "Librairie react-modal-component",
+        "name": "React Modal Component",
         "subtitle": "Composant modale personnalisable pour React JS",
         "description": "",
         "categories": [
-            "Fonctionnalité",
-            "React"
+            "logos:npm-icon",
+            "skill-icons:react-dark"
         ],
-        "thumbnail": "reactmodal.jpg",
+        "thumbnail": "reactmodalcomponent.png",
         "gitlab": "",
         "github": "https://github.com/fabiendevfront/react-modal-component",
         "url": "https://www.npmjs.com/package/@fabiendev/react-modal-component",
@@ -297,8 +301,8 @@
         "subtitle": "Refonte de mon portfolio avec React",
         "description": "",
         "categories": [
-            "Projet",
-            "React"
+            "skill-icons:react-dark",
+            "skill-icons:sass"
         ],
         "thumbnail": "portfolio.jpg",
         "gitlab": "",

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-export const useFetch = (url) => {
+export const useFetch = (url, reverse = false) => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
@@ -17,7 +17,8 @@ export const useFetch = (url) => {
             try {
                 const response = await fetch(url);
                 const dataJSON = await response.json();
-                setData(dataJSON)
+                const finalData = reverse ? dataJSON.reverse() : dataJSON;
+                setData(finalData);
             } catch (error) {
                 console.error(error);
                 setError(true);
@@ -26,7 +27,7 @@ export const useFetch = (url) => {
             }
         };
         getData();
-    }, [url, navigate])
+    }, [url, navigate, reverse]);
 
-    return { data, loading, error }
+    return { data, loading, error };
 };

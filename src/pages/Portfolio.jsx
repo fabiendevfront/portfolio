@@ -1,8 +1,8 @@
 import { useFetch } from "../services/useFetch.jsx";
+import PortfolioCard from "../components/PortfolioCard.jsx";
 
 const Portfolio = () => {
-    const { data, loading, error } = useFetch("/data/works.json");
-    console.log(data);
+    const { data, loading, error } = useFetch("/data/works.json", true);
 
     return (
         <>
@@ -13,12 +13,14 @@ const Portfolio = () => {
             ) : data ? (
                 <section className="portfolio">
                     <div className="portfolio__head">
-                        <div className="portfolio__container">
-                            <h2 className="portfolio__title">Mes réalisations</h2>
-                            <p className="portfolio__subtitle">Vous retrouverez ci-dessous mes réalisations en développement web</p>
-                        </div>
+                        <h2 className="portfolio__title">Mes réalisations</h2>
+                        <p className="portfolio__subtitle">Vous retrouverez ci-dessous mes réalisations, cliquez dessus pour plus de détails.</p>
                     </div>
-
+                    <div className="portfolio__works">
+                        {data.map((work) =>
+                            <PortfolioCard key={work.id} id={work.id} thumbnail={work.thumbnail} name={work.name} categories={work.categories} />
+                        )}
+                    </div>
                 </section>) : (
                 <span>La page rencontre un problème</span>
             )}

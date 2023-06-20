@@ -4,3 +4,33 @@
 /************************/
 /* PORTFOLIO PAGE STYLE */
 /************************/
+
+.portfolio {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    &__head {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__title {
+        @include mixins.font-size(40px);
+        font-weight: 700;
+        margin: 0;
+    }
+
+    &__subtitle {
+        @include mixins.font-size(18px);
+        margin: 0;
+    }
+
+    &__works {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        gap: 30px;
+    }
+}

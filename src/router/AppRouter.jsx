@@ -33,7 +33,7 @@ const AppRouter = () => {
             />
             <Route
                 path="/portfolio"
-                element={<Animation key={location.pathname} variants={slideLeft}><Portfolio /></Animation>}
+                element={<Portfolio />}
             />
             <Route
                 path="/contact"
