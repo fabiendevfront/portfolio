@@ -41,7 +41,7 @@ const AppRouter = () => {
             />
             <Route
                 path="/work/:id"
-                element={<Animation key={location.pathname} variants={slideLeft}><Work /></Animation>}
+                element={<Work />}
             />
             {/* path="*" if the path does not correspond to any route declared above */}
             <Route path="*" element={<Error404 />} />

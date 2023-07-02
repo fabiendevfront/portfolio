@@ -1,13 +1,13 @@
 import { Icon } from "@iconify/react";
-import forest from "../assets/images/forest.png";
+import footerCoverLight from "../assets/images/footerCoverLight.png";
 import footerLogo from "../assets/footerLogo.png";
 import { Link } from "react-router-dom";
 
 const Footer = ({ footerStyle }) => {
     return (
-        <div className={footerStyle}>
+        <footer className={footerStyle}>
             <div className="footer__background">
-                <img src={forest} alt="Visuel montagne" className="footer__picture" />
+                <img src={footerCoverLight} alt="Visuel montagne" className="footer__picture" />
             </div>
             <div className="footer__container">
                 <div className="footer__nav">
@@ -32,7 +32,7 @@ const Footer = ({ footerStyle }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </footer>
     );
 };
 

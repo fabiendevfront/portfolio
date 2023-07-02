@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 
 const PortfolioCard = ({ id, thumbnail, name, categories }) => {
-    console.log(categories);
     return (
         <div className="portfolio-card">
             <Link to={"/work/" + id} className="portfolio-card__link">

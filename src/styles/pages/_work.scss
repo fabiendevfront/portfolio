@@ -1,0 +1,12 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+/**************************/
+/* SINGLE WORK PAGE STYLE */
+/**************************/
+
+.work {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
