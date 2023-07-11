@@ -30,18 +30,19 @@ body {
 
 .main {
     background: variables.$bg-light-grey;
-    padding: 30px 5% 30px 5%;
     flex: 1;
-    padding-bottom: 130px;
-
-    &--mint {
-        background: variables.$primary-color;
-    }
 }
 
 .wrapper {
-    max-width: 90rem;
+    max-width: 87rem;
+    padding-left: 5%;
+    padding-right: 5%;
     margin: 0 auto;
+
+    &--pages {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
 }
 
 img {
@@ -51,4 +52,22 @@ img {
 
 li {
     list-style-type: none;
+}
+
+.divider {
+    width: 100%;
+    position: relative;
+	height: 1px;
+    margin: 40px 0;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 5%;
+        right: 5%;
+        width: 90%;
+        height: 3px;
+        background-image: linear-gradient(to right, transparent, variables.$black, transparent);
+    }
 }

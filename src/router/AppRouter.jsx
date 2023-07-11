@@ -1,9 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "../pages/Home";
 import About from "../pages/About";
-import Skills from "../pages/Skills";
 import Portfolio from "../pages/Portfolio";
-import Contact from "../pages/Contact";
 import Work from "../pages/Work";
 import Error404 from "../pages/Error404";
 import Animation from "../components/Animation";
@@ -25,26 +23,18 @@ const AppRouter = () => {
             />
             <Route
                 path="/about"
-                element={<Animation key={location.pathname} variants={slideLeft}><About /></Animation>}
-            />
-            <Route
-                path="/skills"
-                element={<Animation key={location.pathname} variants={slideLeft}><Skills /></Animation>}
+                element={<About />}
             />
             <Route
                 path="/portfolio"
                 element={<Portfolio />}
             />
             <Route
-                path="/contact"
-                element={<Animation key={location.pathname} variants={slideLeft}><Contact /></Animation>}
-            />
-            <Route
                 path="/work/:id"
                 element={<Work />}
             />
             {/* path="*" if the path does not correspond to any route declared above */}
-            <Route path="*" element={<Error404 />} />
+            <Route path="*" element={<Animation key={location.pathname} variants={slideLeft}><Error404 /></Animation>} />
         </Routes>
     );
 };

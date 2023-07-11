@@ -11,7 +11,7 @@ const Portfolio = () => {
             ) : error && !loading ? (
                 <span>Erreur lors du chargement des données</span>
             ) : data ? (
-                <section className="portfolio">
+                <section className="portfolio wrapper wrapper--pages">
                     <div className="portfolio__head">
                         <h2 className="portfolio__title">Mes réalisations</h2>
                         <p className="portfolio__subtitle">Vous retrouverez ci-dessous mes réalisations, cliquez dessus pour plus de détails.</p>

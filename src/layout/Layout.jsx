@@ -14,8 +14,8 @@ const Layout = ({ children }) => {
     return (
         <>
             <Header />
-            <main className={location.pathname === "/about" ? "main main--mint" : "main"}>{children}</main>
-            <Footer footerStyle={location.pathname === "/about" ? "footer footer--mint": "footer"} />
+            <main className="main">{children}</main>
+            <Footer />
         </>
     );
 };

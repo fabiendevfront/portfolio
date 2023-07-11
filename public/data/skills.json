@@ -1,0 +1,67 @@
+[
+	{
+        "id": "1",
+		"icon": "skill-icons:react-dark",
+        "label": "React"
+    },
+    {
+        "id": "2",
+		"icon": "skill-icons:javascript",
+        "label": "JavaScript"
+    },
+    {
+        "id": "3",
+		"icon": "skill-icons:html",
+        "label": "HTML"
+    },
+    {
+        "id": "4",
+		"icon": "skill-icons:css",
+        "label": "CSS"
+    },
+    {
+        "id": "5",
+		"icon": "skill-icons:sass",
+        "label": "SASS"
+    },
+    {
+        "id": "6",
+		"icon": "skill-icons:nodejs-dark",
+        "label": "NodeJS"
+    },
+    {
+        "id": "7",
+		"icon": "simple-icons:npm",
+        "label": "NPM"
+    },
+    {
+        "id": "8",
+		"icon": "skill-icons:git",
+        "label": "Git"
+    },
+    {
+        "id": "9",
+		"icon": "skill-icons:github-dark",
+        "label": "GitHub"
+    },
+    {
+        "id": "10",
+		"icon": "skill-icons:gitlab-dark",
+        "label": "GitLab"
+    },
+    {
+        "id": "11",
+		"icon": "skill-icons:figma-dark",
+        "label": "Figma"
+    },
+    {
+        "id": "12",
+		"icon": "skill-icons:vscode-dark",
+        "label": "VSCode"
+    },
+    {
+        "id": "13",
+		"icon": "simple-icons:notion",
+        "label": "Notion"
+    }
+]

@@ -31,7 +31,7 @@ const Work = () => {
             ) : error && !loading ? (
                 <span>Erreur lors du chargement des données</span>
             ) : workData ? (
-                <section className="work wrapper">
+                <section className="work wrapper wrapper--pages">
                     <div className="work__head">
                         <img src={"/src/assets/images/works/thumbnails/" + workData.thumbnail} alt="Thumbnail du projet" className="portfolio-card__thumbnail" />
                         <h2 className="work__title">{workData.name}</h2>

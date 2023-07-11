@@ -8,27 +8,29 @@
 .about {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
 
-    @include mixins.large-break {
-        width: 80%;
-        margin: 0 auto;
-    }
-
-    @include mixins.medium-break {
-        width: 100%;
-    }
-
-    &__title,
-    &__interests-title {
+    &__title {
         font-family: variables.$font-secondary;
         @include mixins.font-size(50px);
         color: variables.$black;
         font-weight: 700;
         margin: 0;
+        line-height: 1;
     }
 
-    &__head {
+    &__paragraph {
+        @include mixins.font-size(20px);
+        line-height: 1.8;
+        margin: 0;
+
+        &--big {
+            @include mixins.font-size(22px);
+            font-weight: 700;
+        }
+    }
+
+    &__description {
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -38,68 +40,115 @@
             flex-direction: column-reverse;
             align-items: center;
         }
+
+        &-content {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            @include mixins.large-break {
+                width: 100%;
+            }
+        }
+
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            width: 40%;
+
+            @include mixins.large-break {
+                width: 100%;
+            }
+        }
+
+        &-photography {
+            width: 100%;
+            height: 500px;
+            border-radius: 10px;
+
+            @include mixins.large-break {
+                width: 100%;
+                height: 400px
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+        }
+
+        &-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 15px;
+
+            p,
+            a {
+                text-align: center;
+                margin: 0 auto;
+            }
+
+            a {
+                width: 60%;
+
+                @include mixins.large-break {
+                    width: auto;
+                }
+            }
+        }
     }
 
-    &__description {
-        width: 100%;
+    &__skills {
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        align-items: flex-start;
+        gap: 40px;
 
-        @include mixins.large-break {
-            width: 100%;
-        }
-    }
-
-    &__photography {
-        width: 800px;
-        height: 700px;
-        border-radius: 10px;
-
-        @include mixins.large-break {
-            width: 100%;
-            height: 400px
+        &-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
         }
 
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
+        &-anchor {
+            display: block;
+            width: 70px;
+            height: 70px;
         }
-    }
 
-    &__paragraph {
-        @include mixins.font-size(20px);
-        line-height: 1.8;
-        color: variables.$white;
-        margin: 0;
-
-        &--big {
-            @include mixins.font-size(22px);
-            font-weight: 700;
+        &-tooltip {
+            background-color: variables.$primary-color;
+            opacity: 1;
         }
-    }
 
-    &__cta {
-        margin-top: 50px;
+        &-arrow {
+            background-color: variables.$primary-color;
+        }
     }
 
     &__interests {
         display: flex;
         flex-direction: column;
-        align-items: center;
-    }
+        align-items: flex-start;
 
-    &__interests-items {
-        width: 100%;
-        margin-top: 50px;
-        display: flex;
-        justify-content: space-around;
-        gap: 30px;
-
-        @include mixins.large-break {
+        &-items {
             width: 100%;
+            margin-top: 50px;
+            display: flex;
+            justify-content: flex-start;
+            gap: 30px;
+
+            @include mixins.large-break {
+                width: 100%;
+            }
         }
     }
 }
