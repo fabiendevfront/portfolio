@@ -5,6 +5,7 @@ export const useFetch = (url, reverse = false) => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
+    const [loadingComplete, setLoadingComplete] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -27,7 +28,10 @@ export const useFetch = (url, reverse = false) => {
             }
         };
         getData();
-    }, [url, navigate, reverse]);
 
-    return { data, loading, error };
+        setLoadingComplete(!loading && !error);
+
+    }, [url, navigate, reverse, loading, error]);
+
+    return { data, loading, error, loadingComplete };
 };
