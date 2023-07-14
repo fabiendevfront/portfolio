@@ -10,7 +10,7 @@ const Animation = ({ children, variants, ...props }) => {
                 animate="animate"
                 exit="exit"
                 transition={{ ...variants.transition }}
-                style={{ width: "100%", overflowX: "hidden" }}
+                style={{}}
                 {...props}
             >
                 {children}

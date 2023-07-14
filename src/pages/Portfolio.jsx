@@ -1,6 +1,8 @@
 import { useFetch } from "../services/useFetch.jsx";
 import PortfolioCard from "../components/PortfolioCard.jsx";
 import Loader from "../components/Loader.jsx";
+import Animation from "../components/Animation.jsx";
+import { slideUp } from "../utils/animationVariants.js";
 
 const Portfolio = () => {
     const { data, loading, error, loadingComplete } = useFetch("/data/works.json", true);
@@ -17,11 +19,13 @@ const Portfolio = () => {
                         <h2 className="portfolio__title">Mes réalisations</h2>
                         <p className="portfolio__subtitle">Vous retrouverez ci-dessous mes réalisations, cliquez dessus pour plus de détails.</p>
                     </div>
-                    <div className="portfolio__works">
+                    <Animation className="portfolio__works" variants={slideUp}>
                         {data.map((work) =>
-                            <PortfolioCard key={work.id} id={work.id} thumbnail={work.thumbnail} name={work.name} categories={work.categories} />
+                            <div className="portfolio__works-item" key={work.id}>
+                                <PortfolioCard id={work.id} thumbnail={work.thumbnail} name={work.name} categories={work.categories} />
+                            </div>
                         )}
-                    </div>
+                    </Animation>
                 </section>) : (
                 <span>La page rencontre un problème</span>
             )}

@@ -19,7 +19,7 @@ const AppRouter = () => {
         <Routes>
             <Route
                 path="/"
-                element={<Animation key={location.pathname} variants={popUp}><Home /></Animation>}
+                element={<Animation key={location.pathname} style={{ width: "100%" }} variants={popUp} ><Home /></Animation>}
             />
             <Route
                 path="/about"
