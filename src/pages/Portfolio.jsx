@@ -1,11 +1,21 @@
+import { useState } from "react";
 import { useFetch } from "../services/useFetch.jsx";
 import PortfolioCard from "../components/PortfolioCard.jsx";
 import Loader from "../components/Loader.jsx";
 import Animation from "../components/Animation.jsx";
 import { slideUp } from "../utils/animationVariants.js";
+import Modal from "../components/Modal.jsx";
+import { Icon } from "@iconify/react";
 
 const Portfolio = () => {
     const { data, loading, error, loadingComplete } = useFetch("/data/works.json", true);
+    const [selectedProject, setSelectedProject] = useState(null);
+
+    const [displayModal, setDisplayModal] = useState(false);
+    const toggleModal = (project) => {
+        setDisplayModal(!displayModal);
+        setSelectedProject(project);
+    };
 
     return (
         <>
@@ -22,10 +32,28 @@ const Portfolio = () => {
                     <Animation className="portfolio__works" variants={slideUp}>
                         {data.map((work) =>
                             <div className="portfolio__works-item" key={work.id}>
-                                <PortfolioCard id={work.id} thumbnail={work.thumbnail} name={work.name} categories={work.categories} />
+                                <PortfolioCard id={work.id} thumbnail={work.thumbnail} name={work.name} categories={work.categories} onClick={() => toggleModal(work)} />
                             </div>
                         )}
                     </Animation>
+                    { displayModal && (
+                        <Modal
+                            hideModal={toggleModal}
+                            title={selectedProject.name}
+                            customModalWidth="1200px"
+                        >
+                            <div className="work__head">
+                                <img src={"/src/assets/images/works/thumbnails/" + selectedProject.thumbnail} alt="Thumbnail du projet" className="portfolio-card__thumbnail" />
+                                <p className="work__subtitle">{selectedProject.subtitle}</p>
+                                <p className="work__description">{selectedProject.description}</p>
+                                <div className="work__icon">
+                                    {selectedProject.categories.map((categorie, index) =>
+                                        <Icon key={index} icon={categorie} color="#ffffff" width="30" height="30" />
+                                    )}
+                                </div>
+                            </div>
+                        </Modal>
+                    )}
                 </section>) : (
                 <span>La page rencontre un problème</span>
             )}

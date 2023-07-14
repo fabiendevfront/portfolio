@@ -30,9 +30,9 @@ body {
 
 .main {
     background: variables.$bg-light-grey;
-    flex-grow: 1;
+    flex: 1;
     display: flex;
-    align-items: stretch;
+    align-items: center;
 }
 
 .wrapper {
