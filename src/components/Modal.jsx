@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import PropTypes from "prop-types";
+import { Icon } from "@iconify/react";
 
 /**
  * Modal component
@@ -7,24 +8,15 @@ import PropTypes from "prop-types";
  * @component
  * @param {Object} props - Component props
  * @param {function} props.hideModal - Function to hide modal
- * @param {string} [props.title] - Title of modal
- * @param {node} props.children - Content to display inside modal
- * @param {bool} [props.darkMode] - Whether to display modal in dark mode
- * @param {string} [props.closeBtnContainerColor] - Background color for close button
  * @returns {JSX.Element}
  */
-const Modal = (props) => {
-
-    // Close btn custom style
-    const btnModalStyle = {
-        backgroundColor: props.closeBtnContainerColor || ""
-    };
+const Modal = ({ hideModal, project }) => {
 
     // Event Listener for close modal with escape key
     useEffect(() => {
         const handleKeyDown = (event) => {
             if (event.key === "Escape") {
-                props.hideModal();
+                hideModal();
             }
         };
 
@@ -33,7 +25,7 @@ const Modal = (props) => {
         return () => {
             document.removeEventListener("keydown", handleKeyDown);
         };
-    }, [props]);
+    }, [hideModal]);
 
 
     return (
@@ -43,29 +35,35 @@ const Modal = (props) => {
             aria-labelledby="modal-title"
             aria-describedby="modal-description"
         >
-            <div className="modal__overlay" onClick={props.hideModal}>
-                <div
-                    className={`modal__container ${props.darkMode ? "modal__container--dark" : ""}`}
-                    onClick={(e) => e.stopPropagation()}
-                >
-                    <div className="modal__wrapper">
+            <div className="modal__overlay" onClick={hideModal}>
+                <div className="modal__box">
+                    <div className="modal__container" onClick={(e) => e.stopPropagation()} id="modal-description">
                         <div className="modal__head">
-                            <span
-                                className="modal__close-btn"
-                                onClick={props.hideModal}
-                                style={btnModalStyle}
-                                aria-label="Close modal"
-                                role="button"
-                                tabIndex="0"
-                            ></span>
-                            {props.title &&
-                                <h2 className="modal__title" id="modal-title">{props.title}</h2>
-                            }
+                            <img src={"/src/assets/images/works/thumbnails/" + project.thumbnail} alt="Thumbnail du projet" className="modal__thumbnail" />
                         </div>
-                        <div className="modal__content" id="modal-description">
-                            {props.children}
+                        <div className="modal__content">
+                            <div className="modal__text">
+                                <h2 className="modal__title" id="modal-title">{project.name}</h2>
+                                <p className="modal__subtitle">{project.subtitle}</p>
+                                <p className="modal__description">{project.description}</p>
+                            </div>
+                            <div className="modal__details">
+                                <h3 className="modal__details-title">Catégories</h3>
+                                <div className="modal__details-icon">
+                                    {project.categories.map((categorie, index) =>
+                                        <Icon key={index} icon={categorie} color="#ffffff" width="35" height="35" />
+                                    )}
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <span
+                        className="modal__close-btn"
+                        onClick={hideModal}
+                        aria-label="Close modal"
+                        role="button"
+                        tabIndex="0"
+                    ></span>
                 </div>
             </div>
         </div>
@@ -74,10 +72,7 @@ const Modal = (props) => {
 
 Modal.propTypes = {
     hideModal: PropTypes.func.isRequired,
-    title: PropTypes.string,
-    children: PropTypes.node.isRequired,
-    darkMode: PropTypes.bool,
-    closeBtnContainerColor: PropTypes.string
+    project: PropTypes.object.isRequired
 };
 
 export default Modal;

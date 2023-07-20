@@ -10,7 +10,7 @@
             "skill-icons:alpinejs-light",
             "skill-icons:sass"
         ],
-        "thumbnail": "mendia.jpg",
+        "thumbnail": "mendia.png",
         "gitlab": "https://gitlab.com/fabiendev/mendia",
         "github": "",
         "url": "",
@@ -30,7 +30,7 @@
         "categories": [
             "skill-icons:wordpress"
         ],
-        "thumbnail": "madamschool.jpg",
+        "thumbnail": "madamschool.png",
         "gitlab": "",
         "github": "",
         "url": "https://madamschool.fr/",
@@ -304,7 +304,7 @@
             "skill-icons:react-dark",
             "skill-icons:sass"
         ],
-        "thumbnail": "portfolio.jpg",
+        "thumbnail": "portfolio.png",
         "gitlab": "",
         "github": "https://github.com/fabiendevfront/portfolio",
         "url": "https://fabiendev.com/",

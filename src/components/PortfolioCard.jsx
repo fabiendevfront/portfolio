@@ -1,10 +1,8 @@
-import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 
-const PortfolioCard = ({ id, thumbnail, name, categories, onClick }) => {
+const PortfolioCard = ({ thumbnail, name, categories, onClick }) => {
     return (
         <div className="portfolio-card" onClick={onClick}>
-            {/* <Link to={"/work/" + id} className="portfolio-card__link"> */}
             <div className="portfolio-card__head">
                 <div className="portfolio-card__overlay"></div>
                 <img src={"/src/assets/images/works/thumbnails/" + thumbnail} alt="Thumbnail du projet" className="portfolio-card__thumbnail" />
@@ -17,7 +15,6 @@ const PortfolioCard = ({ id, thumbnail, name, categories, onClick }) => {
                     </div>
                 </div>
             </div>
-            {/* </Link> */}
         </div>
     );
 };
