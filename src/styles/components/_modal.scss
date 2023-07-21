@@ -21,14 +21,15 @@
 
     &__box {
         position: relative;
-        max-width: 1000px;
-        height: 80%;
+        height: 85%;
         overflow: hidden;
         display: flex;
         justify-content: space-between;
+        padding: 40px 70px;
     }
 
     &__container {
+        max-width: 1000px;
         padding: 40px;
         background-color: variables.$bg-light-grey;
         border-radius: 10px;
@@ -52,39 +53,35 @@
         }
     }
 
-    &__close-btn {
-        min-width: 30px;
-        height: 30px;
-        margin-left: 20px;
-        border-radius: 50%;
-        background-color: variables.$white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    &__close-btn,
+    &__previous-btn,
+    &__next-btn {
+        color: variables.$white;
+        position: absolute;
         cursor: pointer;
         transition: background-color 0.3s ease-in-out;
 
         &:hover {
-            background-color: variables.$secondary-color;
-        }
-
-        &::before,
-        &::after {
-            content: "";
-            position: absolute;
-            width: 2px;
-            height: 15px;
-            background-color: variables.$black;
-        }
-
-        &::before {
-            transform: rotate(45deg);
-        }
-
-        &::after {
-            transform: rotate(-45deg);
+            color: variables.$primary-color;
+            transition: background-color 0.3s ease-in-out;
         }
     }
+
+    &__close-btn {
+        top: 0;
+        right: 0;
+    }
+
+    &__previous-btn {
+        top: 50%;
+        left: 0;
+    }
+
+    &__next-btn {
+        top: 50%;
+        right: 0;
+    }
+
 
     &__head {
         width: 900px;

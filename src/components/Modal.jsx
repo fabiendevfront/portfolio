@@ -11,7 +11,7 @@ import parse from "html-react-parser";
  * @param {function} props.hideModal - Function to hide modal
  * @returns {JSX.Element}
  */
-const Modal = ({ hideModal, project }) => {
+const Modal = ({ hideModal, previousProject, nextProject, project }) => {
 
     // Event Listener for close modal with escape key
     useEffect(() => {
@@ -36,8 +36,9 @@ const Modal = ({ hideModal, project }) => {
             aria-labelledby="modal-title"
             aria-describedby="modal-description"
         >
-            <div className="modal__overlay" onClick={hideModal}>
+            <div className="modal__overlay">
                 <div className="modal__box">
+                    
                     <div className="modal__container" onClick={(e) => e.stopPropagation()} id="modal-description">
                         <div className="modal__head">
                             <img src={"/src/assets/images/works/thumbnails/" + project.thumbnail} alt="Thumbnail du projet" className="modal__thumbnail" />
@@ -82,13 +83,36 @@ const Modal = ({ hideModal, project }) => {
                             </div>
                         </div>
                     </div>
-                    <span
+                    <Icon icon="carbon:close-filled"
+                        width="40"
+                        height="40"
                         className="modal__close-btn"
                         onClick={hideModal}
+                        aria-hidden="false"
                         aria-label="Close modal"
                         role="button"
                         tabIndex="0"
-                    ></span>
+                    />
+                    <Icon icon="carbon:previous-filled"
+                        width="40"
+                        height="40"
+                        className="modal__previous-btn hover-color"
+                        onClick={previousProject}
+                        aria-hidden="false"
+                        aria-label="Previous project"
+                        role="button"
+                        tabIndex="0"
+                    />
+                    <Icon icon="carbon:next-filled"
+                        width="40"
+                        height="40"
+                        className="modal__next-btn"
+                        onClick={nextProject}
+                        aria-hidden="false"
+                        aria-label="Next project"
+                        role="button"
+                        tabIndex="0"
+                    />
                 </div>
             </div>
         </div>
