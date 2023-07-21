@@ -38,15 +38,13 @@
         gap: 30px;
         align-items: center;
 
-        /* Style de la barre de défilement */
         &::-webkit-scrollbar {
-            width: 11px; /* Largeur de la barre de défilement */
+            width: 11px;
         }
 
-        /* Style du curseur de la barre de défilement */
         &::-webkit-scrollbar-thumb {
-            background-color: variables.$secondary-color; /* Couleur du curseur */
-            border-radius: 4px; /* Bordure du curseur */
+            background-color: variables.$soft-grey;
+            border-radius: 4px;
         }
 
         &::-webkit-scrollbar-track {
@@ -105,17 +103,70 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
+        align-items: start;
         gap: 20px;
     }
 
     &__text {
         display: flex;
         flex-direction: column;
-        gap: 10px;
-        width: 70%;
+        gap: 8px;
+        width: 75%;
+
+        &-title,
+        &-subtitle,
+        &-description,
+        &-skills {
+            margin: 0;
+        }
+
+        &-title {
+            @include mixins.font-size(30px);
+            line-height: 1;
+        }
+
+        &-subtitle {
+            @include mixins.font-size(22px);
+        }
+
+        &-description {
+            margin-top: 15px;
+        }
+
+        &-skills {
+            margin-top: 15px;
+
+            p {
+                margin: 0;
+                font-weight: 700;
+            }
+
+            ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            li {
+                list-style: inside;
+            }
+        }
     }
 
     &__details {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    &__categories {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        &-title {
+            @include mixins.font-size(22px);
+            margin: 0;
+        }
 
         &-icon {
             display: flex;
@@ -123,9 +174,21 @@
         }
     }
 
-    &__title {
-        font-size: 30px;
-        font-size: 2.375rem;
-        margin: 15px 0 0 0;
+    &__links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &-title {
+            @include mixins.font-size(22px);
+            margin: 0;
+        }
+
+        &-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
     }
 }

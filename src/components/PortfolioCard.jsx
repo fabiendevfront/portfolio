@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 
-const PortfolioCard = ({ thumbnail, name, categories, onClick }) => {
+const PortfolioCard = ({ thumbnail, name, technologies, onClick }) => {
     return (
         <div className="portfolio-card" onClick={onClick}>
             <div className="portfolio-card__head">
@@ -9,8 +9,8 @@ const PortfolioCard = ({ thumbnail, name, categories, onClick }) => {
                 <div className="portfolio-card__caption">
                     <h3 className="portfolio-card__name">{name}</h3>
                     <div className="portfolio-card__icon">
-                        {categories.map((categorie, index) =>
-                            <Icon key={index} icon={categorie} color="#ffffff" width="50" height="50" />
+                        {technologies.map((technologie, index) =>
+                            <Icon key={index} icon={technologie} color="#ffffff" width="50" height="50" />
                         )}
                     </div>
                 </div>

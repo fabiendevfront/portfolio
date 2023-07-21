@@ -32,7 +32,7 @@ const Portfolio = () => {
                     <Animation className="portfolio__works" variants={slideUp}>
                         {data.map((work) =>
                             <div className="portfolio__works-item" key={work.id}>
-                                <PortfolioCard id={work.id} thumbnail={work.thumbnail} name={work.name} categories={work.categories} onClick={() => toggleModal(work)} />
+                                <PortfolioCard id={work.id} thumbnail={work.thumbnail} name={work.name} technologies={work.technologies} onClick={() => toggleModal(work)} />
                             </div>
                         )}
                     </Animation>
