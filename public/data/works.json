@@ -21,11 +21,7 @@
         "url": "",
         "featured": true,
         "date": "2020",
-        "pictures": [
-			"img1.jpg",
-			"img2.jpg",
-            "img3.jpg"
-		]
+        "picture": "mendia.png"
     },
     {
 		"id": "2",
@@ -50,11 +46,7 @@
         "url": "https://madamschool.fr/",
         "featured": true,
         "date": "2021",
-        "pictures": [
-			"img1.jpg",
-			"img2.jpg",
-            "img3.jpg"
-		]
+        "picture": "madamschool.png"
     },
     {
 		"id": "3",
@@ -75,11 +67,7 @@
         "url": "https://booki-fabiendevfront.vercel.app/",
         "featured": true,
         "date": "2022",
-        "pictures": [
-			"img1.jpg",
-			"img2.jpg",
-            "img3.jpg"
-		]
+        "picture": "booki.png"
     },
     {
 		"id": "4",
@@ -103,11 +91,7 @@
         "url": "https://oh-my-food-fabiendevfront.vercel.app/",
         "featured": true,
         "date": "2022",
-        "pictures": [
-			"img1.jpg",
-			"img2.jpg",
-            "img3.jpg"
-		]
+        "picture": "ohmyfood.png"
     },
     {
 		"id": "5",
@@ -127,11 +111,7 @@
         "url": "https://game-on-fabiendevfront.vercel.app/",
         "featured": true,
         "date": "2022",
-        "pictures": [
-			"img1.jpg",
-			"img2.jpg",
-            "img3.jpg"
-		]
+        "picture": "gameon.png"
     },
     {
 		"id": "6",
@@ -154,11 +134,7 @@
         "url": "https://fisheye-fabiendevfront.vercel.app/",
         "featured": true,
         "date": "2022",
-        "pictures": [
-			"img1.jpg",
-			"img2.jpg",
-            "img3.jpg"
-		]
+        "picture": "fisheye.png"
     },
     {
 		"id": "7",
@@ -179,11 +155,7 @@
         "url": "https://les-petits-plats-fabiendevfront.vercel.app/",
         "featured": true,
         "date": "2022",
-        "pictures": [
-			"img1.jpg",
-			"img2.jpg",
-            "img3.jpg"
-		]
+        "picture": "lespetitsplats.png"
     },
     {
 		"id": "8",
@@ -206,11 +178,7 @@
         "url": "",
         "featured": true,
         "date": "2022",
-        "pictures": [
-			"img1.jpg",
-			"img2.jpg",
-            "img3.jpg"
-		]
+        "picture": "billed.png"
     },
     {
 		"id": "9",
@@ -233,11 +201,7 @@
         "url": "https://www.figma.com/file/w7QCjfSiJKzDcvVTOKe0TI/Learn%40Home?type=design&node-id=0%3A1&t=IMNmRObDMV1u5xUO-1",
         "featured": true,
         "date": "2022",
-        "pictures": [
-			"img1.jpg",
-			"img2.jpg",
-            "img3.jpg"
-		]
+        "picture": "learn@home.png"
     },
     {
 		"id": "10",
@@ -259,11 +223,7 @@
         "url": "https://kasa-fabiendevfront.vercel.app/",
         "featured": true,
         "date": "2022",
-        "pictures": [
-			"img1.jpg",
-			"img2.jpg",
-            "img3.jpg"
-		]
+        "picture": "kasa.png"
     },
     {
 		"id": "11",
@@ -285,11 +245,7 @@
         "url": "",
         "featured": true,
         "date": "2023",
-        "pictures": [
-			"img1.jpg",
-			"img2.jpg",
-            "img3.jpg"
-		]
+        "picture": "sportsee.png"
     },
     {
 		"id": "12",
@@ -313,11 +269,7 @@
         "url": "",
         "featured": true,
         "date": "2023",
-        "pictures": [
-			"img1.jpg",
-			"img2.jpg",
-            "img3.jpg"
-		]
+        "picture": "argentbank.png"
     },
     {
 		"id": "13",
@@ -340,11 +292,7 @@
         "url": "https://hrnet-fabiendevfront.vercel.app/",
         "featured": true,
         "date": "2023",
-        "pictures": [
-			"img1.jpg",
-			"img2.jpg",
-            "img3.jpg"
-		]
+        "picture": "hrnet.png"
     },
     {
 		"id": "14",
@@ -367,11 +315,7 @@
         "url": "https://www.npmjs.com/package/@fabiendev/react-modal-component",
         "featured": true,
         "date": "2023",
-        "pictures": [
-			"img1.jpg",
-			"img2.jpg",
-            "img3.jpg"
-		]
+        "picture": "reactmodalcomponent.png"
     },
     {
 		"id": "15",
@@ -394,10 +338,6 @@
         "url": "https://fabiendev.com/",
         "featured": true,
         "date": "2023",
-        "pictures": [
-			"img1.jpg",
-			"img2.jpg",
-            "img3.jpg"
-		]
+        "picture": "mendia.png"
     }
 ]

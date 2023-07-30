@@ -38,7 +38,6 @@ const Modal = ({ hideModal, previousProject, nextProject, project }) => {
         >
             <div className="modal__overlay">
                 <div className="modal__box">
-                    
                     <div className="modal__container" onClick={(e) => e.stopPropagation()} id="modal-description">
                         <div className="modal__head">
                             <img src={"/src/assets/images/works/thumbnails/" + project.thumbnail} alt="Thumbnail du projet" className="modal__thumbnail" />
@@ -81,6 +80,9 @@ const Modal = ({ hideModal, previousProject, nextProject, project }) => {
                                     ): ""}
                                 </div>
                             </div>
+                        </div>
+                        <div className="modal__screen">
+                            <img src={"/src/assets/images/works/screenshots/" + project.picture} alt="Scrrenshot du projet" className="modal__screen-img" />
                         </div>
                     </div>
                     <Icon icon="carbon:close-filled"

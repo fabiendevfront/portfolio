@@ -36,7 +36,7 @@
         overflow-y: scroll;
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 40px;
         align-items: center;
 
         &::-webkit-scrollbar {
@@ -68,25 +68,25 @@
     }
 
     &__close-btn {
-        top: 0;
-        right: 0;
+        top: 3px;
+        right: 3px;
     }
 
     &__previous-btn {
         top: 50%;
-        left: 0;
+        left: 3px;
     }
 
     &__next-btn {
         top: 50%;
-        right: 0;
+        right: 3px;
     }
 
 
     &__head {
-        width: 900px;
+        width: 859px;
         max-width: 100%;
-        height: 450px;
+        height: 300px;
     }
 
     &__thumbnail {
@@ -97,7 +97,7 @@
     }
 
     &__content {
-        width: 100%;
+        width: 859px;
         display: flex;
         justify-content: space-between;
         align-items: start;
@@ -186,6 +186,19 @@
             justify-content: center;
             align-items: center;
             gap: 10px;
+        }
+    }
+
+    &__screen {
+        width: 859px;
+        max-width: 100%;
+        height: 600px;
+
+        &-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
         }
     }
 }

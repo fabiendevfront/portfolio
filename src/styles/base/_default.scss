@@ -31,6 +31,7 @@ body {
 .main {
     background: variables.$bg-light-grey;
     flex: 1;
+    overflow-y: hidden;
     display: flex;
     align-items: center;
 }
