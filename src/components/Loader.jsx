@@ -1,14 +1,15 @@
-import { ColorRing } from  "react-loader-spinner";
+import { RotatingLines } from  "react-loader-spinner";
 
 const Loader = () => {
     return (
         <div className="loader">
-            <ColorRing
-                visible={true}
-                height="220"
+            <RotatingLines
+                strokeColor="#17B7A1"
+                strokeWidth="5"
+                animationDuration="0.75"
                 width="220"
+                visible={true}
                 ariaLabel="blocks-loading"
-                colors={["#17B7A1", "#17665C", "#17B7A1", "#17665C", "#17B7A1"]}
             />
         </div>
     );

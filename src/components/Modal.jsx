@@ -9,9 +9,14 @@ import parse from "html-react-parser";
  * @component
  * @param {Object} props - Component props
  * @param {function} props.hideModal - Function to hide modal
+ * @param {function} props.previousProject - Function to go to previous project
+ * @param {function} props.nextProject - Function to go to next project
+ * @param {Object} props.project - Object contain selected project
  * @returns {JSX.Element}
  */
 const Modal = ({ hideModal, previousProject, nextProject, project }) => {
+
+    const refocusedThumb = project.id === "15";
 
     // Event Listener for close modal with escape key
     useEffect(() => {
@@ -28,7 +33,6 @@ const Modal = ({ hideModal, previousProject, nextProject, project }) => {
         };
     }, [hideModal]);
 
-
     return (
         <div
             className="modal"
@@ -40,7 +44,11 @@ const Modal = ({ hideModal, previousProject, nextProject, project }) => {
                 <div className="modal__box">
                     <div className="modal__container" onClick={(e) => e.stopPropagation()} id="modal-description">
                         <div className="modal__head">
-                            <img src={"/src/assets/images/works/thumbnails/" + project.thumbnail} alt="Thumbnail du projet" className="modal__thumbnail" />
+                            <img
+                                src={"/src/assets/images/works/thumbnails/" + project.thumbnail}
+                                alt="Thumbnail du projet"
+                                className={`modal__thumbnail ${refocusedThumb ? "modal__thumbnail-refocused" : ""}`}
+                            />
                         </div>
                         <div className="modal__content">
                             <div className="modal__text">
@@ -123,6 +131,8 @@ const Modal = ({ hideModal, previousProject, nextProject, project }) => {
 
 Modal.propTypes = {
     hideModal: PropTypes.func.isRequired,
+    previousProject: PropTypes.func.isRequired,
+    nextProject: PropTypes.func.isRequired,
     project: PropTypes.object.isRequired
 };
 

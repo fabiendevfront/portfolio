@@ -50,14 +50,14 @@ const Portfolio = () => {
                             </div>
                         )}
                     </Animation>
-                    { displayModal && (
+                    {displayModal && (
                         <Modal
                             hideModal={toggleModal}
                             previousProject={previousProject}
                             nextProject={nextProject}
                             project={selectedProject}
                         />
-                    ) }
+                    )}
                 </section>) : (
                 <span>La page rencontre un problème</span>
             )}

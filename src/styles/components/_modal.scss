@@ -21,7 +21,7 @@
 
     &__box {
         position: relative;
-        height: 85%;
+        height: 90%;
         overflow: hidden;
         display: flex;
         justify-content: space-between;
@@ -30,7 +30,7 @@
 
     &__container {
         max-width: 1000px;
-        padding: 40px;
+        padding: 60px;
         background-color: variables.$bg-light-grey;
         border-radius: 10px;
         overflow-y: scroll;
@@ -94,6 +94,10 @@
         height: 100%;
         object-fit: cover;
         border-radius: 10px;
+
+        &-refocused {
+            object-position: center top;
+        }
     }
 
     &__content {
