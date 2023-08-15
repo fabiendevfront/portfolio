@@ -1,0 +1,25 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+/************************/
+/* ERROR 404 PAGE STYLE */
+/************************/
+
+.error-404 {
+    width: 75%;
+    margin: 0 auto;
+    padding: 90px 90px 0 90px;
+    text-align: center;
+
+    &__title {
+        @include mixins.font-size(55px);
+        color: variables.$black;
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 50px 0 70px 0;
+    }
+
+    &__btn {
+        @include mixins.font-size(25px);
+    }
+}

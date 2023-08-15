@@ -4,8 +4,7 @@ import { Icon } from "@iconify/react";
 import parse from "html-react-parser";
 
 /**
- * Modal component
- *
+ * Component for Modal
  * @component
  * @param {Object} props - Component props
  * @param {function} props.hideModal - Function to hide modal
@@ -129,6 +128,7 @@ const Modal = ({ hideModal, previousProject, nextProject, project }) => {
     );
 };
 
+// PropTypes for Modal component
 Modal.propTypes = {
     hideModal: PropTypes.func.isRequired,
     previousProject: PropTypes.func.isRequired,

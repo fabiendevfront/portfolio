@@ -5,9 +5,17 @@ import pictureProfil from "../assets/images/pictureProfil.jpg";
 import { Icon } from "@iconify/react";
 import { Tooltip } from "react-tooltip";
 
+/**
+* Component for About page
+* @component
+* @returns {JSX.Element}
+*/
 const About = () => {
+    // Fetch skills and interests data using the useFetch hook
     const { data: skillsData, loading: skillsLoading, error: skillsError, loadingComplete: skillsLoadingComplete } = useFetch("/data/skills.json");
     const { data: interestsData, loading: interestsLoading, error: interestsError, loadingComplete: interestsLoadingComplete } = useFetch("/data/interests.json");
+
+    // Calculate overall loading completion status
     const loadingComplete = skillsLoadingComplete && interestsLoadingComplete;
 
     return (

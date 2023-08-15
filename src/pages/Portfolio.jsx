@@ -6,25 +6,35 @@ import Animation from "../components/Animation.jsx";
 import { slideUp } from "../utils/animationVariants.js";
 import Modal from "../components/Modal.jsx";
 
-
+/**
+* Component for portfolio page
+* @component
+* @returns {JSX.Element}
+*/
 const Portfolio = () => {
+    // Fetch data using the useFetch hook
     const { data, loading, error, loadingComplete } = useFetch("/data/works.json", true);
+
+    // State for selected project and modal display
     const [selectedProject, setSelectedProject] = useState(null);
     const [selectedProjectIndex, setSelectedProjectIndex] = useState(null);
     const [displayModal, setDisplayModal] = useState(false);
 
+    // Toggle modal display and set selected project
     const toggleModal = (project, index) => {
         setDisplayModal(!displayModal);
         setSelectedProject(project);
         setSelectedProjectIndex(index);
     };
 
+    // Show the previous project in the modal
     const previousProject = () => {
         const previousIndex = (selectedProjectIndex - 1 + data.length) % data.length;
         setSelectedProject(data[previousIndex]);
         setSelectedProjectIndex(previousIndex);
     };
 
+    // Show the next project in the modal
     const nextProject = () => {
         const nextIndex = (selectedProjectIndex + 1) % data.length;
         setSelectedProject(data[nextIndex]);

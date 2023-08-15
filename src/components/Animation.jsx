@@ -1,5 +1,14 @@
 import { AnimatePresence, motion } from "framer-motion";
+import PropTypes from "prop-types";
 
+/**
+ * Component for Animation with framer-motion
+ * @component
+ * @param {React.ReactNode} children - The components to be animated
+ * @param {Object} variants - The animation variants to be used.
+ * @param {...Object} props - Additional props
+ * @returns {JSX.Element}
+ */
 const Animation = ({ children, variants, ...props }) => {
 
     return (
@@ -17,6 +26,12 @@ const Animation = ({ children, variants, ...props }) => {
             </motion.div>
         </AnimatePresence>
     );
+};
+
+// PropTypes for Animation component
+Animation.propTypes = {
+    children: PropTypes.node.isRequired,
+    variants: PropTypes.object.isRequired,
 };
 
 export default Animation;

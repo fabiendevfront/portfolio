@@ -3,6 +3,11 @@ import footerCoverLight from "../assets/images/footerCoverLight.png";
 import footerLogo from "../assets/footerLogo.png";
 import { Link } from "react-router-dom";
 
+/**
+ * Component for Footer
+ * @component
+ * @returns {JSX.Element}
+ */
 const Footer = () => {
     return (
         <footer className="footer">
@@ -19,17 +24,17 @@ const Footer = () => {
                         </div>
                         <nav className="footer__social">
                             <div className="footer__social-item">
-                                <a href="https://github.com/fabiendevfront" className="footer__social-link"><Icon icon="bi:github" color="white" width="35" height="35" className="footer__social-icon footer__social-icon--github" /></a>
+                                <a href="https://github.com/fabiendevfront" className="footer__social-link"><Icon icon="bi:github" color="white" width="30" height="30" className="footer__social-icon footer__social-icon--github" /></a>
                             </div>
                             <div className="footer__social-item">
-                                <a href="https://www.linkedin.com/in/fabien-ducousso/" className="footer__social-link"><Icon icon="bi:linkedin" color="white" width="35" height="35" className="footer__social-icon footer__social-icon--linkedin" /></a>
+                                <a href="https://www.linkedin.com/in/fabien-ducousso/" className="footer__social-link"><Icon icon="bi:linkedin" color="white" width="30" height="30" className="footer__social-icon footer__social-icon--linkedin" /></a>
                             </div>
                             <div className="footer__social-item">
-                                <a href="mailto:f.ducousso@protonmail.com" className="footer__social-link"><Icon icon="bi:envelope-fill" color="white" width="40" height="40" className="footer__social-icon" /></a>
+                                <a href="mailto:f.ducousso@protonmail.com" className="footer__social-link"><Icon icon="ri:mail-fill" color="white" width="35" height="35" className="footer__social-icon" /></a>
                             </div>
                         </nav>
                         <div className="footer__copyright">
-                            <p><a href="https://fabiendev.com" className="footer__copyright-link">fabiendev.com</a> ©{new Date().getFullYear()}</p>
+                            <p><Link to="/" className="footer__copyright-link">fabiendev.com</Link> ©{new Date().getFullYear()}</p>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,10 @@
 import { RotatingLines } from  "react-loader-spinner";
 
+/**
+* Component for Loader
+* @component
+* @returns {JSX.Element}
+*/
 const Loader = () => {
     return (
         <div className="loader">

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 /**
- * Component displaying button.
+ * Component for Link Button
  * @component
  * @param {Object} props - Component's props
  * @param {string} props.btnLink - The link of the button
@@ -16,6 +16,7 @@ const LinkButton = ({ btnLink, btnStyle, label }) => {
     );
 };
 
+// PropTypes for LinkButton component
 LinkButton.propTypes = {
     btnLink: PropTypes.string.isRequired,
     btnStyle: PropTypes.string.isRequired,

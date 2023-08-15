@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import PropTypes from "prop-types";
 
 /**
- * The Layout component
+ * Component for the Layout
  * @param {React.ReactNode} [props.children]
  * @returns A React component
  */
@@ -18,6 +18,7 @@ const Layout = ({ children }) => {
     );
 };
 
+// PropTypes for the Layout component
 Layout.propTypes = {
     children: PropTypes.node.isRequired,
 };

@@ -1,5 +1,16 @@
 import { Icon } from "@iconify/react";
+import PropTypes from "prop-types";
 
+/**
+ * Component for Portfolio Card
+ * @component
+ * @param {Object} props - Component props
+ * @param {string} props.thumbnail - Thumbnail image source
+ * @param {string} props.name - Name of the project
+ * @param {Array} props.technologies - Array of technology icons
+ * @param {function} props.onClick - Function to handle card click
+ * @returns {JSX.Element}
+ */
 const PortfolioCard = ({ thumbnail, name, technologies, onClick }) => {
     return (
         <div className="portfolio-card" onClick={onClick}>
@@ -17,6 +28,14 @@ const PortfolioCard = ({ thumbnail, name, technologies, onClick }) => {
             </div>
         </div>
     );
+};
+
+// PropTypes for PortfolioCard component
+PortfolioCard.propTypes = {
+    thumbnail: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    technologies: PropTypes.arrayOf(PropTypes.string).isRequired,
+    onClick: PropTypes.func.isRequired,
 };
 
 export default PortfolioCard;
