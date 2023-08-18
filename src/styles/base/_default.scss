@@ -45,6 +45,11 @@ body {
     &--pages {
         padding-top: 50px;
         padding-bottom: 50px;
+
+        @include mixins.small-break {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
     }
 }
 

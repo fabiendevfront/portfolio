@@ -97,17 +97,17 @@
             }
 
             &--mail {
-                width: 35px;
-                height: 35px;
+                width: 38px;
+                height: 38px;
 
                 @include mixins.medium-break {
-                    width: 30px;
-                    height: 30px;
+                    width: 33px;
+                    height: 33px;
                 }
 
                 @include mixins.small-break {
-                    width: 28px;
-                    height: 28px;
+                    width: 31px;
+                    height: 31px;
                 }
             }
 
@@ -115,7 +115,7 @@
                 &:hover,
                 &:focus,
                 &:active {
-                    color: #6865E9;
+                    color: variables.$github;
                     transition: all .3s ease-in-out;
                 }
             }
@@ -124,7 +124,7 @@
                 &:hover,
                 &:focus,
                 &:active {
-                    color: #0a66c2;
+                    color: variables.$linkedin;
                     transition: all .3s ease-in-out;
                 }
             }

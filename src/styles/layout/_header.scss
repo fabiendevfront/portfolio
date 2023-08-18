@@ -18,13 +18,12 @@
         justify-content: space-between;
         align-items: center;
 
-        @include mixins.medium-break {
-            flex-direction: column;
-        }
+        // @include mixins.medium-break {
+        //     flex-direction: column;
+        // }
 
         @include mixins.small-break {
             flex-direction: row;
-            
         }
     }
 
@@ -37,12 +36,11 @@
         height: 50px;
 
         @include mixins.medium-break {
-            height: 60px;
-            margin-bottom: 30px;
+            height: 50px;
         }
 
         @include mixins.small-break {
-            height: 40px;
+            height: 50px;
             margin-bottom: 0;
         }
     }
@@ -86,6 +84,10 @@
         font-weight: 600;
         position: relative;
         transition: all 0.3s ease-in-out;
+
+        @include mixins.medium-break {
+            @include mixins.font-size(18px);
+        }
 
         &--txt {
 
@@ -153,6 +155,14 @@
         z-index: 1;
         opacity: 0;
 
+        @include mixins.medium-break {
+            bottom: -78px;
+        }
+
+        @include mixins.medium-break {
+            bottom: -88px;
+        }
+
         &::after {
             content: "";
             position: absolute;
@@ -161,43 +171,69 @@
             border-width: 10px;
             border-style: solid;
             border-color: transparent transparent variables.$dark transparent;
+            display: none;
         }
 
         &.show {
             opacity: 1;
             transition: opacity 0.6s ease-in-out;
-        }
-    }
 
-    &__svg {
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        align-items: start;
-        color: variables.$white;
-        transition: all .3s ease-in-out;
-
-        &:hover,
-        &:focus,
-        &:active {
-            color: variables.$primary-color;
-        }
-
-        &--github {
-            &:hover,
-            &:focus,
-            &:active {
-                color: #6865E9;
-                transition: all .3s ease-in-out;
+            &::after {
+                display: block;
             }
         }
 
-        &--linkedin {
+        &-link {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+        }
+
+        &-icon {
+            color: variables.$white;
+            transition: all .3s ease-in-out;
+            width: 38px;
+            height: 38px;
+
+            @include mixins.medium-break {
+                width: 33px;
+                height: 33px;
+            }
+
             &:hover,
             &:focus,
             &:active {
-                color: #0a66c2;
-                transition: all .3s ease-in-out;
+                color: variables.$primary-color;
+            }
+
+            &--mail {
+                width: 40px;
+                height: 40px;
+
+                @include mixins.medium-break {
+                    width: 35px;
+                    height: 35px;
+                }
+            }
+
+            &--github {
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: variables.$github;
+                    transition: all .3s ease-in-out;
+                }
+            }
+
+            &--linkedin {
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: variables.$linkedin;
+                    transition: all .3s ease-in-out;
+                }
             }
         }
     }

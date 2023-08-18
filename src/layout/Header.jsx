@@ -9,8 +9,8 @@ import { Icon } from "@iconify/react";
  * @returns {JSX.Element}
  */
 const Header = () => {
-    const [showContactIcons, setShowContactIcons] = useState(false);
     const [showMobileMenu, setShowMobileMenu] = useState(false);
+    const [showContactIcons, setShowContactIcons] = useState(false);
 
     // Ref to mobile menu to detect outside clicks
     const mobileMenuRef = useRef();
@@ -88,14 +88,14 @@ const Header = () => {
                         <div className={`header__contact ${showContactIcons ? "show" : ""}`}>
                             {showContactIcons && (
                                 <>
-                                    <a href="https://github.com/fabiendevfront" className="header__svg header__svg--github">
-                                        <Icon icon="formkit:github" width="38" height="38" />
+                                    <a href="https://github.com/fabiendevfront" className="header__contact-link">
+                                        <Icon icon="formkit:github" className="header__contact-icon header__contact-icon--github" />
                                     </a>
-                                    <a href="https://www.linkedin.com/in/fabien-ducousso/" className="header__svg header__svg--linkedin">
-                                        <Icon icon="uil:linkedin" width="38" height="38" />
+                                    <a href="https://www.linkedin.com/in/fabien-ducousso/" className="header__contact-link">
+                                        <Icon icon="uil:linkedin" className="header__contact-icon header__contact-icon--linkedin" />
                                     </a>
-                                    <a href="mailto:f.ducousso@protonmail.com" className="header__svg">
-                                        <Icon icon="ri:mail-fill" width="40" height="40" />
+                                    <a href="mailto:f.ducousso@protonmail.com" className="header__contact-link">
+                                        <Icon icon="ri:mail-fill" className="header__contact-icon header__contact-icon--mail" />
                                     </a>
                                 </>
                             )}

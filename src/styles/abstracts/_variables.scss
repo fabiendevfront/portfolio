@@ -14,10 +14,12 @@ $primary-color: #17B7A1;
 $secondary-color: #17665C;
 $white: #ffffff;
 $black: #000000;
-$dark: #212121;
-$error: #ff0033;
+$dark: lighten($black, 13%);
 $bg-light-grey: darken($white, 5%);
 $soft-grey: darken($white, 33%);
+$error: #ff0033;
+$github: #6865E9;
+$linkedin: #0a66c2;
 
 
 /********/
