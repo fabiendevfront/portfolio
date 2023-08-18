@@ -15,6 +15,14 @@
     align-items: center;
     gap: 10px;
 
+    @include mixins.medium-break {
+        width: 45%;
+    }
+
+    @include mixins.small-break {
+        width: 100%;
+    }
+
     &__label {
         @include mixins.font-size(16px);
         text-align: center;

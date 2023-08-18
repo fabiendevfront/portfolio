@@ -42,7 +42,7 @@
         justify-content: space-between;
         gap: 40px;
 
-        @include mixins.large-break {
+        @include mixins.medium-break {
             flex-direction: column-reverse;
             align-items: center;
         }
@@ -53,7 +53,7 @@
             flex-direction: column;
             gap: 30px;
 
-            @include mixins.large-break {
+            @include mixins.medium-break {
                 width: 100%;
             }
         }
@@ -64,8 +64,17 @@
             gap: 30px;
             width: 40%;
 
-            @include mixins.large-break {
+            @include mixins.medium-break {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
                 width: 100%;
+            }
+
+            @include mixins.small-break {
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
             }
         }
 
@@ -74,17 +83,20 @@
             height: 500px;
             border-radius: 10px;
 
-            @include mixins.large-break {
-                width: 100%;
-                height: 400px
-            }
-
             img {
                 width: 100%;
                 height: 100%;
                 border: 10px variables.$dark solid;
                 object-fit: cover;
                 border-radius: 10px;
+
+                @include mixins.medium-break {
+                    object-position: center top;
+                }
+
+                @include mixins.small-break {
+                    object-position: center top;
+                }
             }
         }
 
@@ -139,6 +151,22 @@
         &-arrow {
             background-color: variables.$primary-color;
         }
+
+        &-icon {
+            color: variables.$black;
+            width: 70px;
+            height: 70px;
+
+            @include mixins.medium-break {
+                width: 60px;
+                height: 60px;
+            }
+
+            @include mixins.small-break {
+                width: 50px;
+                height: 50px;
+            }
+        }
     }
 
     &__interests {
@@ -151,10 +179,11 @@
             margin-top: 50px;
             display: flex;
             justify-content: flex-start;
+            flex-wrap: wrap;
             gap: 30px;
 
-            @include mixins.large-break {
-                width: 100%;
+            @include mixins.small-break {
+                justify-content: center;
             }
         }
     }

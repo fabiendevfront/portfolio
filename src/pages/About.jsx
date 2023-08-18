@@ -66,7 +66,7 @@ const About = () => {
                                 {skillsData.map((skill) =>
                                     <li className="about__skills-icon" key={skill.id}>
                                         <a id={`tooltip-${skill.id}`} className="about__skills-anchor">
-                                            <Icon icon={skill.icon} color="#000000" width="70" height="70" />
+                                            <Icon icon={skill.icon} className="about__skills-icon" />
                                         </a>
                                         <Tooltip
                                             anchorSelect={`#tooltip-${skill.id}`}
