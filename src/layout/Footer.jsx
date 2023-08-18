@@ -16,27 +16,25 @@ const Footer = () => {
             </div>
             <div className="footer__container">
                 <div className="footer__content wrapper">
-                    <div className="footer__nav">
-                        <div className="footer__logo">
-                            <Link to="/" className="header__link">
-                                <img src={footerLogo} className="footer__logo" alt="Logo du footer" />
-                            </Link>
-                        </div>
-                        <nav className="footer__social">
-                            <div className="footer__social-item">
-                                <a href="https://github.com/fabiendevfront" className="footer__social-link"><Icon icon="bi:github" color="white" width="30" height="30" className="footer__social-icon footer__social-icon--github" /></a>
-                            </div>
-                            <div className="footer__social-item">
-                                <a href="https://www.linkedin.com/in/fabien-ducousso/" className="footer__social-link"><Icon icon="bi:linkedin" color="white" width="30" height="30" className="footer__social-icon footer__social-icon--linkedin" /></a>
-                            </div>
-                            <div className="footer__social-item">
-                                <a href="mailto:f.ducousso@protonmail.com" className="footer__social-link"><Icon icon="ri:mail-fill" color="white" width="35" height="35" className="footer__social-icon" /></a>
-                            </div>
-                        </nav>
-                        <div className="footer__copyright">
-                            <p><Link to="/" className="footer__copyright-link">fabiendev.com</Link> ©{new Date().getFullYear()}</p>
-                        </div>
+                    <div className="footer__logo">
+                        <Link to="/" className="header__link">
+                            <img src={footerLogo} className="footer__logo" alt="Logo du footer" />
+                        </Link>
                     </div>
+                    <nav className="footer__social">
+                        <a href="https://github.com/fabiendevfront" className="footer__social-link">
+                            <Icon icon="bi:github" className="footer__social-icon footer__social-icon--github" />
+                        </a>
+                        <a href="https://www.linkedin.com/in/fabien-ducousso/" className="footer__social-link">
+                            <Icon icon="bi:linkedin" className="footer__social-icon footer__social-icon--linkedin" />
+                        </a>
+                        <a href="mailto:f.ducousso@protonmail.com" className="footer__social-link">
+                            <Icon icon="ri:mail-fill" className="footer__social-icon footer__social-icon--mail" />
+                        </a>
+                    </nav>
+                    <p className="footer__copyright">
+                        <Link to="/" className="footer__copyright-link">fabiendev.com</Link> ©{new Date().getFullYear()}
+                    </p>
                 </div>
             </div>
         </footer>
