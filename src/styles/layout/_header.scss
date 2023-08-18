@@ -11,16 +11,21 @@
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
 
-    @include mixins.medium-break {
-        flex-direction: column;
-    }
-
     &__container {
         position: relative;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
+
+        @include mixins.medium-break {
+            flex-direction: column;
+        }
+
+        @include mixins.small-break {
+            flex-direction: row;
+            
+        }
     }
 
     h1 {
@@ -32,8 +37,13 @@
         height: 50px;
 
         @include mixins.medium-break {
-            height: 70px;
+            height: 60px;
             margin-bottom: 30px;
+        }
+
+        @include mixins.small-break {
+            height: 40px;
+            margin-bottom: 0;
         }
     }
 
@@ -41,6 +51,32 @@
         display: flex;
         gap: 2.938rem;
         align-items: center;
+
+        @include mixins.small-break {
+            display: none;
+        }
+
+        &--mobile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            width: 50%;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: variables.$dark;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            z-index: 10;
+            padding: 1rem;
+            transition: transform 0.3s ease-in-out;
+
+            @include mixins.small-break {
+                display: flex;
+                color: variables.$white;
+            }
+        }
     }
 
     &__nav-link {
@@ -73,12 +109,38 @@
                     width: 100%;
                 }
             }
+
+            @include mixins.small-break {
+                color: variables.$white;
+            }
+        }
+    }
+
+    &__mobile-btn {
+        display: none;
+
+        @include mixins.small-break {
+            color: variables.$dark;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+
+            &:hover {
+                color: variables.$primary-color;
+                transition: all .3s ease-in-out;
+            }
+        }
+
+        &.open {
+            transform: rotate(90deg);
         }
     }
 
     &__contact {
         position: absolute;
-        bottom: -70px;
+        bottom: -85px;
         right: 0;
         background-color: variables.$dark;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);

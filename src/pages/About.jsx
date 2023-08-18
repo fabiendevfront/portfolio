@@ -1,7 +1,7 @@
 import { useFetch } from "../services/useFetch.jsx";
 import Loader from "../components/Loader.jsx";
 import InterestCard from "../components/InterestCard";
-import pictureProfil from "../assets/images/pictureProfil.jpg";
+import pictureProfil from "../assets/images/pictureProfil.png";
 import { Icon } from "@iconify/react";
 import { Tooltip } from "react-tooltip";
 
