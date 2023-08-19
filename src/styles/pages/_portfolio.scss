@@ -36,8 +36,33 @@
     &__works {
         display: flex;
         flex-wrap: wrap;
-        justify-content: start;
-        gap: 30px;
+        justify-content: space-between;
+        gap: 25px;
         overflow: hidden;
+
+        @include mixins.medium-break {
+            justify-content: flex-start;
+        }
+
+        @include mixins.small-break {
+            justify-content: center;
+            gap: 30px;
+        }
+
+        &-item {
+            @include mixins.large-break {
+                width: 31%;
+                height: auto;
+            }
+
+            @include mixins.medium-break {
+                width: 48%;
+                height: auto;
+            }
+
+            @include mixins.small-break {
+                width: 100%;
+            }
+        }
     }
 }

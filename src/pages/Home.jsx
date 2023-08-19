@@ -7,7 +7,7 @@ import HeroBanner from "../components/HeroBanner";
 */
 const Home = () => {
     return (
-        <div className="home wrapper wrapper--pages">
+        <div className="home wrapper">
             <div className="home__hero">
                 <HeroBanner/>
             </div>
