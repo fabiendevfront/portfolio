@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/Modal.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/Modal.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { useEffect } from "react";
+import PropTypes from "prop-types";
+import { Icon } from "@iconify/react";
+import parse from "html-react-parser";
+
+/**
+ * Component for Modal
+ * @component
+ * @param {Object} props - Component props
+ * @param {function} props.hideModal - Function to hide modal
+ * @param {function} props.previousProject - Function to go to previous project
+ * @param {function} props.nextProject - Function to go to next project
+ * @param {Object} props.project - Object contain selected project
+ * @returns {JSX.Element}
+ */
+const Modal = ({ hideModal, previousProject, nextProject, project }) => {
+
+    const refocusedThumb = project.id === "15";
+
+    // Event Listener for close modal with escape key
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.key === "Escape") {
+                hideModal();
+            }
+        };
+
+        document.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            document.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [hideModal]);
+
+    return (
+        &lt;div
+            className="modal"
+            aria-modal="true"
+            aria-labelledby="modal-title"
+            aria-describedby="modal-description"
+        >
+            &lt;div className="modal__overlay">
+                &lt;div className="modal__box">
+                    &lt;div className="modal__container" onClick={(e) => e.stopPropagation()} id="modal-description">
+                        &lt;div className="modal__head">
+                            &lt;img
+                                src={"/src/assets/images/works/thumbnails/" + project.thumbnail}
+                                alt="Thumbnail du projet"
+                                className={`modal__thumbnail ${refocusedThumb ? "modal__thumbnail-refocused" : ""}`}
+                            />
+                        &lt;/div>
+                        &lt;div className="modal__content">
+                            &lt;div className="modal__text">
+                                &lt;h2 className="modal__text-title" id="modal-title">{project.name}&lt;/h2>
+                                &lt;p className="modal__text-subtitle">{project.subtitle}&lt;/p>
+                                &lt;p className="modal__text-description">{parse(project.description)}&lt;/p>
+                                {project.skills ? (
+                                    &lt;div className="modal__text-skills">
+                                        &lt;p>Compétences:&lt;/p>
+                                        &lt;ul>
+                                            {project.skills.map((skill, index) =>
+                                                &lt;li key={index}>{skill}&lt;/li>
+                                            )}
+                                        &lt;/ul>
+                                    &lt;/div>
+                                ) : ""}
+                            &lt;/div>
+                            &lt;div className="modal__details">
+                                &lt;div className="modal__categories">
+                                    &lt;h3 className="modal__categories-title">Technologies:&lt;/h3>
+                                    &lt;div className="modal__categories-icon">
+                                        {project.technologies.map((technology, index) =>
+                                            &lt;Icon key={index} icon={technology} color="#ffffff" width="35" height="35" />
+                                        )}
+                                    &lt;/div>
+                                &lt;/div>
+                                &lt;div className="modal__links">
+                                    &lt;h3 className="modal__links-title">Voir le projet:&lt;/h3>
+                                    {project.url ? (
+                                        &lt;a href={project.url} target="_blank" rel="noopener noreferrer" className="modal__links-btn btn btn--link btn--link-demo">Demo &lt;Icon icon="mdi:web" color="#ffffff" width="30" height="30" />&lt;/a>
+                                    ) : ""}
+                                    {project.gitlab ? (
+                                        &lt;a href={project.gitlab} target="_blank" rel="noopener noreferrer" className="modal__links-btn btn btn--link btn--link-gitlab">Code  &lt;Icon icon="skill-icons:gitlab-light" color="#ffffff" width="30" height="30" />&lt;/a>
+                                    ): ""}
+                                    {project.github ? (
+                                        &lt;a href={project.github} target="_blank" rel="noopener noreferrer" className="modal__links-btn btn btn--link btn--link-github">Code  &lt;Icon icon="skill-icons:github-dark" color="#ffffff" width="30" height="30" />&lt;/a>
+                                    ): ""}
+                                &lt;/div>
+                            &lt;/div>
+                        &lt;/div>
+                        &lt;div className="modal__screen">
+                            &lt;img src={"/src/assets/images/works/screenshots/" + project.picture} alt="Scrrenshot du projet" className="modal__screen-img" />
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div className="modal__btn modal__btn--close">
+                        &lt;Icon icon="carbon:close-filled"
+                            className="modal__btn-icon"
+                            onClick={hideModal}
+                            aria-hidden="false"
+                            aria-label="Close modal"
+                            role="button"
+                            tabIndex="0"
+                        />
+                        &lt;span className="modal__btn-label">Fermer&lt;/span>
+                    &lt;/div>
+                    &lt;div className="modal__btn modal__btn--previous">
+                        &lt;Icon icon="carbon:previous-filled"
+                            className="modal__btn-icon"
+                            onClick={previousProject}
+                            aria-hidden="false"
+                            aria-label="Previous project"
+                            role="button"
+                            tabIndex="0"
+                        />
+                        &lt;span className="modal__btn-label">Précédant&lt;/span>
+                    &lt;/div>
+                    &lt;div className="modal__btn modal__btn--next">
+                        &lt;span className="modal__btn-label">Suivant&lt;/span>
+                        &lt;Icon icon="carbon:next-filled"
+                            className="modal__btn-icon"
+                            onClick={nextProject}
+                            aria-hidden="false"
+                            aria-label="Next project"
+                            role="button"
+                            tabIndex="0"
+                        />
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    );
+};
+
+// PropTypes for Modal component
+Modal.propTypes = {
+    hideModal: PropTypes.func.isRequired,
+    previousProject: PropTypes.func.isRequired,
+    nextProject: PropTypes.func.isRequired,
+    project: PropTypes.object.isRequired
+};
+
+export default Modal;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#About">About</a></li><li><a href="global.html#Animation">Animation</a></li><li><a href="global.html#App">App</a></li><li><a href="global.html#AppRouter">AppRouter</a></li><li><a href="global.html#Error404">Error404</a></li><li><a href="global.html#Footer">Footer</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#HeroBanner">HeroBanner</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#InterestCard">InterestCard</a></li><li><a href="global.html#Layout">Layout</a></li><li><a href="global.html#LinkButton">LinkButton</a></li><li><a href="global.html#Loader">Loader</a></li><li><a href="global.html#Modal">Modal</a></li><li><a href="global.html#Portfolio">Portfolio</a></li><li><a href="global.html#PortfolioCard">PortfolioCard</a></li><li><a href="global.html#popUp">popUp</a></li><li><a href="global.html#slideUp">slideUp</a></li><li><a href="global.html#useFetch">useFetch</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Sun Aug 20 2023 20:19:10 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

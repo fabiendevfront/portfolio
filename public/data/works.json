@@ -321,7 +321,7 @@
 		"id": "15",
         "name": "fabiendev",
         "subtitle": "Mon portfolio de développeur front-end",
-        "description": "Renfonte de mon portfolio avec React et SASS. L'ancienne version avait été creer avec PHP, SQL et JS natif.",
+        "description": "Refonte de mon portfolio avec React et SASS. L'ancienne version avait été creer avec PHP, SQL et JS natif.",
         "skills": [
             "Projet initialiser avec ViteJs",
             "Refonte de l'application avec React",

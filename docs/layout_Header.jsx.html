@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: layout/Header.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: layout/Header.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { useState, useEffect, useRef } from "react";
+import logo from "../assets/logo.png";
+import { NavLink, Link } from "react-router-dom";
+import { Icon } from "@iconify/react";
+
+/**
+ * Component for Header
+ * @component
+ * @returns {JSX.Element}
+ */
+const Header = () => {
+    const [showMobileMenu, setShowMobileMenu] = useState(false);
+    const [showContactIcons, setShowContactIcons] = useState(false);
+
+    // Ref to mobile menu to detect outside clicks
+    const mobileMenuRef = useRef();
+    // Ref to contact icons link to detect outside clicks
+    const contactIconsRef = useRef();
+    // Ref to contact icons popup to detect inside clicks
+    const contactIconsContentRef = useRef();
+
+    // Toggle mobile menu
+    const toggleMobileMenu = (event) => {
+        event.stopPropagation();
+        setShowMobileMenu(!showMobileMenu);
+    };
+
+    // Toggle contact icons
+    const toggleContactIcons = () => {
+        setShowContactIcons(!showContactIcons);
+    };
+
+    // New version of useEffect after refactoring
+    useEffect(() => {
+        // Function to handle clicks outside of the mobile menu and contact icons
+        const handleOutsideClick = (event) => {
+            // Close the mobile menu if clicked outside
+            if (mobileMenuRef.current &amp;&amp; !mobileMenuRef.current.contains(event.target)) {
+                setShowMobileMenu(false);
+            }
+
+            // Close the contact icons popup if clicked outside
+            if (contactIconsRef.current &amp;&amp; !contactIconsRef.current.contains(event.target)) {
+                setShowContactIcons(false);
+            }
+        };
+
+        // Function to handle window resize
+        const handleResize = () => {
+            // Close the mobile menu on window resize
+            if (showMobileMenu) {
+                setShowMobileMenu(false);
+            }
+            // Close the contact icons popup on window resize
+            if (showContactIcons) {
+                setShowContactIcons(false);
+            }
+        };
+
+        // Function to prevent propagation clicks inside contact icons content
+        const handleInsideContactContentClick = (event) => {
+            if (contactIconsContentRef.current &amp;&amp; contactIconsContentRef.current.contains(event.target)) {
+                event.stopPropagation();
+            }
+        };
+
+        // Save the current value of the contactIconsContentRef
+        let contactIconsContentRefCurrent = contactIconsContentRef.current;
+
+        // Add event listeners when mobile menu or contact icons are active
+        if (showMobileMenu || showContactIcons) {
+            document.addEventListener("click", handleOutsideClick);
+            contactIconsContentRefCurrent.addEventListener("click", handleInsideContactContentClick);
+            window.addEventListener("resize", handleResize);
+        }
+
+        // Clean up event listeners when the component unmounts or dependencies change
+        return () => {
+            document.removeEventListener("click", handleOutsideClick);
+            contactIconsContentRefCurrent.removeEventListener("click", handleInsideContactContentClick);
+            window.removeEventListener("resize", handleResize);
+        };
+    }, [showMobileMenu, showContactIcons]);
+
+
+    return (
+        &lt;header className="header wrapper">
+            &lt;div className="header__container">
+                &lt;Link to="/" className="header__link">
+                    &lt;h1>
+                        &lt;img src={logo} className="header__logo" alt="Logo du header" />
+                    &lt;/h1>
+                &lt;/Link>
+                &lt;nav ref={mobileMenuRef} className={`header__nav ${showMobileMenu ? "header__nav--mobile" : ""}`}>
+                    &lt;NavLink to="/" className="header__nav-link header__nav-link--txt">
+                        Accueil
+                    &lt;/NavLink>
+                    &lt;NavLink to="/about" className="header__nav-link header__nav-link--txt">
+                        Profil
+                    &lt;/NavLink>
+                    &lt;NavLink to="/portfolio" className="header__nav-link header__nav-link--txt">
+                        Réalisations
+                    &lt;/NavLink>
+                    &lt;div ref={contactIconsRef} className="header__nav-link header__nav-link--txt" onClick={toggleContactIcons}>
+                        Contact
+                        &lt;div ref={contactIconsContentRef} className={`header__contact ${showContactIcons ? "show" : ""}`}>
+                            {showContactIcons &amp;&amp; (
+                                &lt;>
+                                    &lt;a href="https://github.com/fabiendevfront" target="_blank" rel="noopener noreferrer" className="header__contact-link">
+                                        &lt;Icon icon="formkit:github" className="header__contact-icon header__contact-icon--github" />
+                                    &lt;/a>
+                                    &lt;a href="https://www.linkedin.com/in/fabien-ducousso/" target="_blank" rel="noopener noreferrer" className="header__contact-link">
+                                        &lt;Icon icon="uil:linkedin" className="header__contact-icon header__contact-icon--linkedin" />
+                                    &lt;/a>
+                                    &lt;a href="mailto:f.ducousso@protonmail.com" className="header__contact-link">
+                                        &lt;Icon icon="ri:mail-fill" className="header__contact-icon header__contact-icon--mail" />
+                                    &lt;/a>
+                                &lt;/>
+                            )}
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/nav>
+                &lt;div className={`header__mobile-btn ${showMobileMenu ? "open" : ""}`} onClick={toggleMobileMenu}>
+                    {showMobileMenu ? (
+                        &lt;Icon icon="material-symbols:close" width="30" height="30" />
+                    ) : (
+                        &lt;Icon icon="material-symbols:menu" width="30" height="30" />
+                    )}
+                &lt;/div>
+            &lt;/div>
+        &lt;/header>
+    );
+};
+
+export default Header;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#About">About</a></li><li><a href="global.html#Animation">Animation</a></li><li><a href="global.html#App">App</a></li><li><a href="global.html#AppRouter">AppRouter</a></li><li><a href="global.html#Error404">Error404</a></li><li><a href="global.html#Footer">Footer</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#HeroBanner">HeroBanner</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#InterestCard">InterestCard</a></li><li><a href="global.html#Layout">Layout</a></li><li><a href="global.html#LinkButton">LinkButton</a></li><li><a href="global.html#Loader">Loader</a></li><li><a href="global.html#Modal">Modal</a></li><li><a href="global.html#Portfolio">Portfolio</a></li><li><a href="global.html#PortfolioCard">PortfolioCard</a></li><li><a href="global.html#popUp">popUp</a></li><li><a href="global.html#slideUp">slideUp</a></li><li><a href="global.html#useFetch">useFetch</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Sun Aug 20 2023 20:19:09 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

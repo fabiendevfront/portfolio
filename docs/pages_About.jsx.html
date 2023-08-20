@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: pages/About.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: pages/About.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { useFetch } from "../services/useFetch.jsx";
+import Loader from "../components/Loader.jsx";
+import InterestCard from "../components/InterestCard";
+import pictureProfil from "../assets/images/pictureProfil.png";
+import { Icon } from "@iconify/react";
+import { Tooltip } from "react-tooltip";
+
+/**
+* Component for About page
+* @component
+* @returns {JSX.Element}
+*/
+const About = () => {
+    // Fetch skills and interests data using the useFetch hook
+    const { data: skillsData, loading: skillsLoading, error: skillsError, loadingComplete: skillsLoadingComplete } = useFetch("/data/skills.json");
+    const { data: interestsData, loading: interestsLoading, error: interestsError, loadingComplete: interestsLoadingComplete } = useFetch("/data/interests.json");
+
+    // Calculate overall loading completion status
+    const loadingComplete = skillsLoadingComplete &amp;&amp; interestsLoadingComplete;
+
+    return (
+        &lt;>
+            {interestsLoading || skillsLoading ? (
+                &lt;Loader />
+            ) : (interestsError &amp;&amp; !interestsLoading) || (skillsError &amp;&amp; !skillsLoading) ? (
+                &lt;span>Erreur lors du chargement des données&lt;/span>
+            ) : (
+                &lt;>
+                    &lt;section className={`about wrapper wrapper--pages ${loadingComplete ? "loaded" : ""}`}>
+                        &lt;h2 className="about__title">Bonjour, je suis Fabien&lt;/h2>
+                        &lt;div className="about__description">
+                            &lt;div className="about__description-content">
+                                &lt;p className="about__paragraph">
+                                    Ma passion pour la programmation a commencé il y a quelques années lorsque j’ai commencé à développer mes compétences en HTML, CSS et 
+                                    JavaScript. Depuis, j’ai suivi deux formations, une en &lt;strong>développement web et web mobile&lt;/strong>, puis la seconde pour me spécialiser en &lt;strong>développement 
+                                    front-end avec React JS&lt;/strong>. Ces formations m’ont permis de maîtriser les technologies clés pour le développement front-end, notamment &lt;strong>HTML, CSS, 
+                                    JavaScript, SASS, React, Redux, Node JS et Git&lt;/strong>. J’ai acquis des compétences dans &lt;strong>l’utilisation d’API REST, le responsive design, l’accessibilité et le testing&lt;/strong>.
+                                &lt;/p>
+                                &lt;p className="about__paragraph">
+                                    Au-delà de mes compétences techniques, j’ai également acquis &lt;strong>une solide expérience en gestion de clientèle&lt;/strong> grâce à mon expérience précédente 
+                                    en tant que responsable du service technique et formateur d’un extranet pour diagnostiqueurs immobiliers au sein d’une agence web. Cette expérience 
+                                    m’a permis de développer des &lt;strong>compétences en communication, en formation et en résolution de problèmes&lt;/strong>.
+                                &lt;/p>
+                                &lt;p className="about__paragraph">
+                                    En dehors du développement web, je suis passionné de randonnée en montagne, pendant lesquelles je contribue à des projets géo-participatifs open source, 
+                                    tel qu’OpenStreetMap, en enrichissant et améliorant la carte avec des données locales et je fais également de la photographie.
+                                &lt;/p>
+                            &lt;/div>
+                            &lt;aside>
+                                &lt;div className="about__description-photography">
+                                    &lt;img src={pictureProfil} alt="Photographie de profil randonneur" />
+                                &lt;/div>
+                                &lt;div className="about__description-cta">
+                                    &lt;p className="about__paragraph">Vous pouvez consulter mon CV ci-dessous :&lt;/p>
+                                    &lt;a href="/files/CV-Fabien-Ducousso.pdf" className="btn btn--about" download>Télécharger mon CV&lt;/a>
+                                &lt;/div>
+                            &lt;/aside>
+                        &lt;/div>
+                        &lt;div className="divider">&lt;/div>
+                        &lt;div className="about__skills">
+                            &lt;h3 className="about__title">Mes compétences&lt;/h3>
+                            &lt;p className="about__paragraph">
+                                En tant que développeur front-end, je sais utiliser différents langages et outils, en voici les principaux :
+                            &lt;/p>
+                            &lt;ul className="about__skills-list">
+                                {skillsData.map((skill) =>
+                                    &lt;li className="about__skills-icon" key={skill.id}>
+                                        &lt;a id={`tooltip-${skill.id}`} className="about__skills-anchor">
+                                            &lt;Icon icon={skill.icon} className="about__skills-icon" />
+                                        &lt;/a>
+                                        &lt;Tooltip
+                                            anchorSelect={`#tooltip-${skill.id}`}
+                                            className="about__skills-tooltip"
+                                            classNameArrow="about__skills-arrow"
+                                        >
+                                            {skill.label}
+                                        &lt;/Tooltip>
+                                    &lt;/li>
+                                )}
+                            &lt;/ul>
+                        &lt;/div>
+                        &lt;div className="divider">&lt;/div>
+                        &lt;div className="about__interests">
+                            &lt;h3 className="about__title">Mes intérêts&lt;/h3>
+                            &lt;div className="about__interests-items">
+                                {interestsData.map((interest) =>
+                                    &lt;InterestCard key={interest.id} icon={interest.icon} label={interest.label} />
+                                )}
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/section>
+                &lt;/>
+            )}
+        &lt;/>
+    );
+};
+
+export default About;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#About">About</a></li><li><a href="global.html#Animation">Animation</a></li><li><a href="global.html#App">App</a></li><li><a href="global.html#AppRouter">AppRouter</a></li><li><a href="global.html#Error404">Error404</a></li><li><a href="global.html#Footer">Footer</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#HeroBanner">HeroBanner</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#InterestCard">InterestCard</a></li><li><a href="global.html#Layout">Layout</a></li><li><a href="global.html#LinkButton">LinkButton</a></li><li><a href="global.html#Loader">Loader</a></li><li><a href="global.html#Modal">Modal</a></li><li><a href="global.html#Portfolio">Portfolio</a></li><li><a href="global.html#PortfolioCard">PortfolioCard</a></li><li><a href="global.html#popUp">popUp</a></li><li><a href="global.html#slideUp">slideUp</a></li><li><a href="global.html#useFetch">useFetch</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Sun Aug 20 2023 20:19:09 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
