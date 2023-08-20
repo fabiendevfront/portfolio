@@ -11,7 +11,7 @@
     &__background {
         margin-bottom: -8px;
 
-        @include mixins.small-break {
+        @include mixins.custom-breakpoint(small) {
             margin-bottom: 15px;
         }
     }
@@ -29,11 +29,11 @@
         justify-content: space-between;
         align-items: center;
 
-        @include mixins.medium-break {
+        @include mixins.custom-breakpoint(medium) {
             width: 80%;
         }
 
-        @include mixins.small-break {
+        @include mixins.custom-breakpoint(small) {
             width: 90%;
             flex-wrap: wrap;
             justify-content: center;
@@ -44,11 +44,11 @@
     &__logo {
         height: 40px;
 
-        @include mixins.medium-break {
+        @include mixins.custom-breakpoint(medium) {
             height: 32px;
         }
 
-        @include mixins.small-break {
+        @include mixins.custom-breakpoint(small) {
             height: 28px;
         }
     }
@@ -59,11 +59,11 @@
         align-items: center;
         gap: 40px;
 
-        @include mixins.medium-break {
+        @include mixins.custom-breakpoint(medium) {
             gap: 20px;
         }
 
-        @include mixins.small-break {
+        @include mixins.custom-breakpoint(small) {
             width: auto;
         }
 
@@ -79,12 +79,12 @@
             color: variables.$white;
             transition: all .3s ease-in-out;
 
-            @include mixins.medium-break {
+            @include mixins.custom-breakpoint(medium) {
                 width: 25px;
                 height: 25px;
             }
 
-            @include mixins.small-break {
+            @include mixins.custom-breakpoint(small) {
                 width: 23px;
                 height: 23px;
             }
@@ -100,12 +100,12 @@
                 width: 38px;
                 height: 38px;
 
-                @include mixins.medium-break {
+                @include mixins.custom-breakpoint(medium) {
                     width: 33px;
                     height: 33px;
                 }
 
-                @include mixins.small-break {
+                @include mixins.custom-breakpoint(small) {
                     width: 31px;
                     height: 31px;
                 }
@@ -135,7 +135,7 @@
         margin: 0;
         color: variables.$white;
 
-        @include mixins.small-break {
+        @include mixins.custom-breakpoint(small) {
             @include mixins.font-size(14px);
         }
     }

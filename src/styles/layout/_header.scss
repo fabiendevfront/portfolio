@@ -18,7 +18,7 @@
         justify-content: space-between;
         align-items: center;
 
-        @include mixins.small-break {
+        @include mixins.custom-breakpoint(small) {
             flex-direction: row;
         }
     }
@@ -31,11 +31,11 @@
     &__logo {
         height: 50px;
 
-        @include mixins.medium-break {
+        @include mixins.custom-breakpoint(medium) {
             height: 50px;
         }
 
-        @include mixins.small-break {
+        @include mixins.custom-breakpoint(small) {
             height: 50px;
             margin-bottom: 0;
         }
@@ -46,7 +46,7 @@
         gap: 2.938rem;
         align-items: center;
 
-        @include mixins.small-break {
+        @include mixins.custom-breakpoint(small) {
             display: none;
         }
 
@@ -66,7 +66,7 @@
             padding: 1rem;
             transition: transform 0.3s ease-in-out;
 
-            @include mixins.small-break {
+            @include mixins.custom-breakpoint(small) {
                 display: flex;
                 color: variables.$white;
             }
@@ -81,7 +81,7 @@
         position: relative;
         transition: all 0.3s ease-in-out;
 
-        @include mixins.medium-break {
+        @include mixins.custom-breakpoint(medium) {
             @include mixins.font-size(18px);
         }
 
@@ -108,7 +108,7 @@
                 }
             }
 
-            @include mixins.small-break {
+            @include mixins.custom-breakpoint(small) {
                 color: variables.$white;
             }
         }
@@ -117,7 +117,7 @@
     &__mobile-btn {
         display: none;
 
-        @include mixins.small-break {
+        @include mixins.custom-breakpoint(small) {
             color: variables.$dark;
             display: flex;
             flex-direction: column;
@@ -151,11 +151,11 @@
         z-index: 1;
         opacity: 0;
 
-        @include mixins.medium-break {
+        @include mixins.custom-breakpoint(medium) {
             bottom: -78px;
         }
 
-        @include mixins.medium-break {
+        @include mixins.custom-breakpoint(small) {
             bottom: -88px;
         }
 
@@ -191,7 +191,7 @@
             width: 38px;
             height: 38px;
 
-            @include mixins.medium-break {
+            @include mixins.custom-breakpoint(medium) {
                 width: 33px;
                 height: 33px;
             }
@@ -206,7 +206,7 @@
                 width: 40px;
                 height: 40px;
 
-                @include mixins.medium-break {
+                @include mixins.custom-breakpoint(medium) {
                     width: 35px;
                     height: 35px;
                 }

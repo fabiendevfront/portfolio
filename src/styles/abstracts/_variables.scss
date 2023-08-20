@@ -19,16 +19,8 @@ $bg-light-grey: darken($white, 5%);
 $soft-grey: darken($white, 33%);
 $error: #ff0033;
 $github: #6865E9;
+$gitlab: #e24329;
 $linkedin: #0a66c2;
-
-
-/********/
-/* SIZE */
-/********/
-
-$wrapper-xl: 30px 5% 30px 5%;
-$wrapper-l: 30px 2% 30px 2%;
-$wrapper-layout: 20px 5% 20px 5%;
 
 /***************/
 /* RESPONSIVE */
@@ -38,5 +30,6 @@ $wrapper-layout: 20px 5% 20px 5%;
 $breakpoints: (
     large: 1440px,
     medium: 1024px,
-    small: 768px
+    small: 768px,
+    xsmall: 480px
 );

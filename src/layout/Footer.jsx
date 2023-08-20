@@ -22,10 +22,10 @@ const Footer = () => {
                         </Link>
                     </div>
                     <nav className="footer__social">
-                        <a href="https://github.com/fabiendevfront" className="footer__social-link">
+                        <a href="https://github.com/fabiendevfront" target="_blank" rel="noopener noreferrer" className="footer__social-link">
                             <Icon icon="bi:github" className="footer__social-icon footer__social-icon--github" />
                         </a>
-                        <a href="https://www.linkedin.com/in/fabien-ducousso/" className="footer__social-link">
+                        <a href="https://www.linkedin.com/in/fabien-ducousso/" target="_blank" rel="noopener noreferrer" className="footer__social-link">
                             <Icon icon="bi:linkedin" className="footer__social-icon footer__social-icon--linkedin" />
                         </a>
                         <a href="mailto:f.ducousso@protonmail.com" className="footer__social-link">

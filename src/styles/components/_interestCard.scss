@@ -15,11 +15,11 @@
     align-items: center;
     gap: 10px;
 
-    @include mixins.medium-break {
+    @include mixins.custom-breakpoint(medium) {
         width: 45%;
     }
 
-    @include mixins.small-break {
+    @include mixins.custom-breakpoint(small) {
         width: 100%;
     }
 

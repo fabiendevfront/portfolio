@@ -20,11 +20,11 @@
         color: variables.$primary-color;
         margin: 0;
 
-        @include mixins.medium-break {
+        @include mixins.custom-breakpoint(medium) {
             @include mixins.font-size(45px);
         }
 
-        @include mixins.small-break {
+        @include mixins.custom-breakpoint(small) {
             @include mixins.font-size(38px);
             line-height: 1;
         }
@@ -37,11 +37,11 @@
         line-height: 1;
         margin: 0;
 
-        @include mixins.medium-break {
+        @include mixins.custom-breakpoint(medium) {
             @include mixins.font-size(55px);
         }
 
-        @include mixins.small-break {
+        @include mixins.custom-breakpoint(small) {
             @include mixins.font-size(51px);
         }
     }
@@ -51,7 +51,7 @@
         @include mixins.font-size(20px);
         margin: 0 0 30px 0;
 
-        @include mixins.medium-break {
+        @include mixins.custom-breakpoint(medium) {
             @include mixins.font-size(18px);
         }
     }

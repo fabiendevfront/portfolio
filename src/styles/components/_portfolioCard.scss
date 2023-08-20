@@ -15,7 +15,7 @@
         border-radius: 10px;
         cursor: pointer;
 
-        @include mixins.large-break {
+        @include mixins.custom-breakpoint(large) {
             width: 100%;
         }
 

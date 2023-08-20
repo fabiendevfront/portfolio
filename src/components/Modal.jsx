@@ -67,7 +67,7 @@ const Modal = ({ hideModal, previousProject, nextProject, project }) => {
                             </div>
                             <div className="modal__details">
                                 <div className="modal__categories">
-                                    <h3 className="modal__categories-title">Technologies</h3>
+                                    <h3 className="modal__categories-title">Technologies:</h3>
                                     <div className="modal__categories-icon">
                                         {project.technologies.map((technology, index) =>
                                             <Icon key={index} icon={technology} color="#ffffff" width="35" height="35" />
@@ -75,15 +75,15 @@ const Modal = ({ hideModal, previousProject, nextProject, project }) => {
                                     </div>
                                 </div>
                                 <div className="modal__links">
-                                    <h3 className="modal__links-title">Voir le projet</h3>
+                                    <h3 className="modal__links-title">Voir le projet:</h3>
                                     {project.url ? (
-                                        <a href={project.url} target="_blank" rel="noopener noreferrer" className="modal__links-btn btn btn--link-demo">Demo <Icon icon="mdi:web" color="#ffffff" width="30" height="30" /></a>
+                                        <a href={project.url} target="_blank" rel="noopener noreferrer" className="modal__links-btn btn btn--link btn--link-demo">Demo <Icon icon="mdi:web" color="#ffffff" width="30" height="30" /></a>
                                     ) : ""}
                                     {project.gitlab ? (
-                                        <a href={project.gitlab} target="_blank" rel="noopener noreferrer" className="modal__links-btn btn btn--link-gitlab">Code  <Icon icon="skill-icons:gitlab-light" color="#ffffff" width="30" height="30" /></a>
+                                        <a href={project.gitlab} target="_blank" rel="noopener noreferrer" className="modal__links-btn btn btn--link btn--link-gitlab">Code  <Icon icon="skill-icons:gitlab-light" color="#ffffff" width="30" height="30" /></a>
                                     ): ""}
                                     {project.github ? (
-                                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="modal__links-btn btn btn--link-github">Code  <Icon icon="skill-icons:github-dark" color="#ffffff" width="30" height="30" /></a>
+                                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="modal__links-btn btn btn--link btn--link-github">Code  <Icon icon="skill-icons:github-dark" color="#ffffff" width="30" height="30" /></a>
                                     ): ""}
                                 </div>
                             </div>
@@ -92,36 +92,39 @@ const Modal = ({ hideModal, previousProject, nextProject, project }) => {
                             <img src={"/src/assets/images/works/screenshots/" + project.picture} alt="Scrrenshot du projet" className="modal__screen-img" />
                         </div>
                     </div>
-                    <Icon icon="carbon:close-filled"
-                        width="40"
-                        height="40"
-                        className="modal__close-btn"
-                        onClick={hideModal}
-                        aria-hidden="false"
-                        aria-label="Close modal"
-                        role="button"
-                        tabIndex="0"
-                    />
-                    <Icon icon="carbon:previous-filled"
-                        width="40"
-                        height="40"
-                        className="modal__previous-btn hover-color"
-                        onClick={previousProject}
-                        aria-hidden="false"
-                        aria-label="Previous project"
-                        role="button"
-                        tabIndex="0"
-                    />
-                    <Icon icon="carbon:next-filled"
-                        width="40"
-                        height="40"
-                        className="modal__next-btn"
-                        onClick={nextProject}
-                        aria-hidden="false"
-                        aria-label="Next project"
-                        role="button"
-                        tabIndex="0"
-                    />
+                    <div className="modal__btn modal__btn--close">
+                        <Icon icon="carbon:close-filled"
+                            className="modal__btn-icon"
+                            onClick={hideModal}
+                            aria-hidden="false"
+                            aria-label="Close modal"
+                            role="button"
+                            tabIndex="0"
+                        />
+                        <span className="modal__btn-label">Fermer</span>
+                    </div>
+                    <div className="modal__btn modal__btn--previous">
+                        <Icon icon="carbon:previous-filled"
+                            className="modal__btn-icon"
+                            onClick={previousProject}
+                            aria-hidden="false"
+                            aria-label="Previous project"
+                            role="button"
+                            tabIndex="0"
+                        />
+                        <span className="modal__btn-label">Précédant</span>
+                    </div>
+                    <div className="modal__btn modal__btn--next">
+                        <span className="modal__btn-label">Suivant</span>
+                        <Icon icon="carbon:next-filled"
+                            className="modal__btn-icon"
+                            onClick={nextProject}
+                            aria-hidden="false"
+                            aria-label="Next project"
+                            role="button"
+                            tabIndex="0"
+                        />
+                    </div>
                 </div>
             </div>
         </div>

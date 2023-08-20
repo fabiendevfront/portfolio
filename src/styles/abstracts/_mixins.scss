@@ -20,23 +20,10 @@
 /* RESPONSIVE */
 /**************/
 
-// 1. Contain media queries for large screen
-@mixin large-break {
-    @media screen and (max-width: map-get(variables.$breakpoints, large)) {
+// Contain media query based on the provided breakpoint
+@mixin custom-breakpoint($breakpoint) {
+    @media screen and (max-width: map-get(variables.$breakpoints, $breakpoint)) {
         @content;
     }
 }
 
-// 2. Contain media queries for medium screen
-@mixin medium-break {
-    @media screen and (max-width: map-get(variables.$breakpoints, medium)) {
-        @content;
-    }
-}
-
-// 3. Contain media queries for small screen
-@mixin small-break {
-    @media screen and (max-width: map-get(variables.$breakpoints, small)) {
-        @content;
-    }
-}

@@ -83,87 +83,6 @@ const Header = () => {
     }, [showMobileMenu, showContactIcons]);
 
 
-    // Old version before refactoring
-    // // Handle clicks inside the popup content
-    // const handleInsideContactContentClick = (event) => {
-    //     if (contactIconsContentRef.current && contactIconsContentRef.current.contains(event.target)) {
-    //         // Prevent closing when clicking inside the popup content
-    //         event.stopPropagation();
-    //     }
-    // };
-
-    // // Add/remove click event listener to mobile menu
-    // useEffect(() => {
-    //     const handleOutsideClick = (event) => {
-    //         if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
-    //             setShowMobileMenu(false);
-    //         }
-    //     };
-
-    //     if (showMobileMenu) {
-    //         document.addEventListener("click", handleOutsideClick);
-    //     } else {
-    //         document.removeEventListener("click", handleOutsideClick);
-    //     }
-
-    //     return () => {
-    //         document.removeEventListener("click", handleOutsideClick);
-    //     };
-    // }, [showMobileMenu]);
-
-    // // Close mobile menu on window resize
-    // useEffect(() => {
-    //     const handleResize = () => {
-    //         if (showMobileMenu) {
-    //             setShowMobileMenu(false);
-    //         }
-    //     };
-
-    //     window.addEventListener("resize", handleResize);
-
-    //     return () => {
-    //         window.removeEventListener("resize", handleResize);
-    //     };
-    // }, [showMobileMenu]);
-
-    // // Add/remove click event listener to contact icons popup
-    // useEffect(() => {
-    //     const handleOutsideContactClick = (event) => {
-    //         if (contactIconsRef.current && !contactIconsRef.current.contains(event.target)) {
-    //             setShowContactIcons(false);
-    //             console.log("change ok");
-    //         }
-    //     };
-
-    //     if (showContactIcons) {
-    //         document.addEventListener("click", handleOutsideContactClick);
-    //         contactIconsContentRef.current.addEventListener("click", handleInsideContactContentClick);
-    //     } else {
-    //         document.removeEventListener("click", handleOutsideContactClick);
-    //         contactIconsContentRef.current.removeEventListener("click", handleInsideContactContentClick);
-    //     }
-
-    //     return () => {
-    //         document.removeEventListener("click", handleOutsideContactClick);
-    //     };
-    // }, [showContactIcons]);
-
-
-    // // Close contact icons popup on window resize
-    // useEffect(() => {
-    //     const handleResizeContact = () => {
-    //         if (showContactIcons) {
-    //             setShowContactIcons(false);
-    //         }
-    //     };
-
-    //     window.addEventListener("resize", handleResizeContact);
-
-    //     return () => {
-    //         window.removeEventListener("resize", handleResizeContact);
-    //     };
-    // }, [showContactIcons]);
-
     return (
         <header className="header wrapper">
             <div className="header__container">
@@ -193,7 +112,7 @@ const Header = () => {
                                     <a href="https://www.linkedin.com/in/fabien-ducousso/" target="_blank" rel="noopener noreferrer" className="header__contact-link">
                                         <Icon icon="uil:linkedin" className="header__contact-icon header__contact-icon--linkedin" />
                                     </a>
-                                    <a href="mailto:f.ducousso@protonmail.com" target="_blank" rel="noopener noreferrer" className="header__contact-link">
+                                    <a href="mailto:f.ducousso@protonmail.com" className="header__contact-link">
                                         <Icon icon="ri:mail-fill" className="header__contact-icon header__contact-icon--mail" />
                                     </a>
                                 </>

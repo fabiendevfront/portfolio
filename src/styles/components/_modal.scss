@@ -26,6 +26,18 @@
         display: flex;
         justify-content: space-between;
         padding: 40px 70px;
+        width: 90%;
+        max-width: 1130px;
+
+        @include mixins.custom-breakpoint(small) {
+            flex-direction: column-reverse;
+            justify-content: center;
+            padding: 40px 10px;
+        }
+
+        @include mixins.custom-breakpoint(xsmall) {
+            padding-top: 60px;
+        }
     }
 
     &__container {
@@ -38,6 +50,15 @@
         flex-direction: column;
         gap: 40px;
         align-items: center;
+
+        @include mixins.custom-breakpoint(medium) {
+            padding: 45px;
+        }
+
+        @include mixins.custom-breakpoint(small) {
+            padding: 20px 28px;
+            min-width: 300px;
+        }
 
         &::-webkit-scrollbar {
             width: 11px;
@@ -53,35 +74,96 @@
         }
     }
 
-    &__close-btn,
-    &__previous-btn,
-    &__next-btn {
-        color: variables.$white;
+    &__btn {
         position: absolute;
-        cursor: pointer;
-        transition: background-color 0.3s ease-in-out;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 5px;
 
-        &:hover {
-            color: variables.$primary-color;
-            transition: background-color 0.3s ease-in-out;
+        &-label {
+            display: none;
+            color: variables.$white;
+            transition: color 0.3s ease-in-out;
+
+            @include mixins.custom-breakpoint(small) {
+                display: block;
+            }
+
+            @include mixins.custom-breakpoint(xsmall) {
+                display: none;
+            }
+        }
+
+        &-icon {
+            width: 40px;
+            height: 40px;
+            color: variables.$bg-light-grey;
+            cursor: pointer;
+            transition: color 0.3s ease-in-out;
+
+            &:hover {
+                color: variables.$primary-color;
+                transition: color 0.3s ease-in-out;
+            }
+
+            @include mixins.custom-breakpoint(small) {
+                width: 30px;
+                height: 30px;
+            }
+
+            @include mixins.custom-breakpoint(xsmall) {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        &--close {
+            top: 3px;
+            right: 3px;
+
+            @include mixins.custom-breakpoint(small) {
+                top: 2px;
+                right: 40%;
+            }
+
+            @include mixins.custom-breakpoint(xsmall) {
+                top: 2px;
+                right: 10px;
+            }
+        }
+
+        &--previous {
+            top: 50%;
+            left: 3px;
+
+            @include mixins.custom-breakpoint(small) {
+                top: 2px;
+                left: 10px;
+            }
+
+            @include mixins.custom-breakpoint(xsmall) {
+                top: 2px;
+                left: 10px;
+            }
+        }
+
+        &--next {
+            top: 50%;
+            right: 3px;
+
+            @include mixins.custom-breakpoint(small) {
+                top: 2px;
+                right: 10px;
+            }
+
+            @include mixins.custom-breakpoint(xsmall) {
+                top: 2px;
+                right: auto;
+                left: 70px;
+            }
         }
     }
-
-    &__close-btn {
-        top: 3px;
-        right: 3px;
-    }
-
-    &__previous-btn {
-        top: 50%;
-        left: 3px;
-    }
-
-    &__next-btn {
-        top: 50%;
-        right: 3px;
-    }
-
 
     &__head {
         width: 859px;
@@ -101,11 +183,17 @@
     }
 
     &__content {
-        width: 859px;
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: start;
         gap: 20px;
+
+        @include mixins.custom-breakpoint(medium) {
+            width: 100%;
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 
     &__text {
@@ -113,6 +201,10 @@
         flex-direction: column;
         gap: 8px;
         width: 75%;
+
+        @include mixins.custom-breakpoint(medium) {
+            width: 100%;
+        }
 
         &-title,
         &-subtitle,
@@ -164,9 +256,18 @@
         flex-direction: column;
         gap: 8px;
 
+        @include mixins.custom-breakpoint(medium) {
+            flex-direction: row;
+            align-items: center;
+        }
+
         &-title {
             @include mixins.font-size(22px);
             margin: 0;
+
+            @include mixins.custom-breakpoint(small) {
+                @include mixins.font-size(18px);
+            }
         }
 
         &-icon {
@@ -180,9 +281,20 @@
         flex-direction: column;
         gap: 10px;
 
+        @include mixins.custom-breakpoint(medium) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+
         &-title {
             @include mixins.font-size(22px);
             margin: 0;
+
+            @include mixins.custom-breakpoint(small) {
+                @include mixins.font-size(18px);
+            }
         }
 
         &-btn {

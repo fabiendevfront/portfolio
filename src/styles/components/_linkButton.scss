@@ -15,12 +15,12 @@
     cursor: pointer;
     transition: all .3s ease-in-out;
 
-    @include mixins.medium-break {
+    @include mixins.custom-breakpoint(medium) {
         @include mixins.font-size(18px);
         padding: 18px 32px;
     }
 
-    @include mixins.small-break {
+    @include mixins.custom-breakpoint(small) {
         @include mixins.font-size(16px);
         padding: 16px 28px;
     }
@@ -47,6 +47,10 @@
     &--link {
         padding: 10px 25px;
 
+        @include mixins.custom-breakpoint(small) {
+            padding: 5px 15px;
+        }
+
         &-demo {
             background-color: variables.$dark;
 
@@ -57,19 +61,19 @@
         }
 
         &-gitlab {
-            background-color: #e24329;
+            background-color: variables.$gitlab;
 
             &:hover {
-                background-color: darken(#e24329, 15%);
+                background-color: darken(variables.$gitlab, 15%);
                 transition: all .3s ease-in-out;
             }
         }
 
         &-github {
-            background-color: #1752a4;
+            background-color: variables.$github;
 
             &:hover {
-                background-color: lighten(#1752a4, 10%);
+                background-color: lighten(variables.$github, 10%);
             }
         }
     }

@@ -40,27 +40,27 @@
         gap: 25px;
         overflow: hidden;
 
-        @include mixins.medium-break {
+        @include mixins.custom-breakpoint(medium) {
             justify-content: flex-start;
         }
 
-        @include mixins.small-break {
+        @include mixins.custom-breakpoint(small) {
             justify-content: center;
             gap: 30px;
         }
 
         &-item {
-            @include mixins.large-break {
+            @include mixins.custom-breakpoint(large) {
                 width: 31%;
                 height: auto;
             }
 
-            @include mixins.medium-break {
+            @include mixins.custom-breakpoint(medium) {
                 width: 48%;
                 height: auto;
             }
 
-            @include mixins.small-break {
+            @include mixins.custom-breakpoint(small) {
                 width: 100%;
             }
         }
