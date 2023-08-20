@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import PropTypes from "prop-types";
 import { Icon } from "@iconify/react";
 import parse from "html-react-parser";
+import { getThumbUrl, getScreenUrl } from "../utils/tools";
 
 /**
  * Component for Modal
@@ -44,7 +45,7 @@ const Modal = ({ hideModal, previousProject, nextProject, project }) => {
                     <div className="modal__container" onClick={(e) => e.stopPropagation()} id="modal-description">
                         <div className="modal__head">
                             <img
-                                src={"/src/assets/images/works/thumbnails/" + project.thumbnail}
+                                src={getThumbUrl(project.thumbnail)}
                                 alt="Thumbnail du projet"
                                 className={`modal__thumbnail ${refocusedThumb ? "modal__thumbnail-refocused" : ""}`}
                             />
@@ -89,7 +90,7 @@ const Modal = ({ hideModal, previousProject, nextProject, project }) => {
                             </div>
                         </div>
                         <div className="modal__screen">
-                            <img src={"/src/assets/images/works/screenshots/" + project.picture} alt="Scrrenshot du projet" className="modal__screen-img" />
+                            <img src={getScreenUrl(project.picture)} alt="Screenshot du projet" className="modal__screen-img" />
                         </div>
                     </div>
                     <div className="modal__btn modal__btn--close">

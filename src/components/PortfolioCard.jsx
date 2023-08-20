@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import PropTypes from "prop-types";
+import { getThumbUrl } from "../utils/tools";
 
 /**
  * Component for Portfolio Card
@@ -12,11 +13,13 @@ import PropTypes from "prop-types";
  * @returns {JSX.Element}
  */
 const PortfolioCard = ({ thumbnail, name, technologies, onClick }) => {
+
+
     return (
         <div className="portfolio-card" onClick={onClick}>
             <div className="portfolio-card__head">
                 <div className="portfolio-card__overlay"></div>
-                <img src={"/src/assets/images/works/thumbnails/" + thumbnail} alt="Thumbnail du projet" className="portfolio-card__thumbnail" />
+                <img src={getThumbUrl(thumbnail)} alt="Thumbnail du projet" className="portfolio-card__thumbnail" />
                 <div className="portfolio-card__caption">
                     <h3 className="portfolio-card__name">{name}</h3>
                     <div className="portfolio-card__icon">

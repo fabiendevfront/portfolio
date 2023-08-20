@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: layout/Layout.jsx</title>
+    <title>JSDoc: Source: utils/tools.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: layout/Layout.jsx</h1>
+    <h1 class="page-title">Source: utils/tools.js</h1>
 
     
 
@@ -26,32 +26,23 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import Header from "./Header";
-import Footer from "./Footer";
-import PropTypes from "prop-types";
+            <pre class="prettyprint source linenums"><code>/**
+ * Generates the URL for a thumbnail image based on the provided name.
+ * @param {string} name - Name of the thumbnail image file.
+ * @returns {string} - The complete URL to the thumbnail image.
+*/
+export const getThumbUrl = (name) => {
+    return new URL(`../assets/images/works/thumbnails/${name}`, import.meta.url).href;
+};
 
 /**
- * Component for the Layout
- * @param {React.ReactNode} [props.children]
- * @returns A React component
- */
-const Layout = ({ children }) => {
-
-    return (
-        &lt;>
-            &lt;Header />
-            &lt;main className="main">{children}&lt;/main>
-            &lt;Footer />
-        &lt;/>
-    );
-};
-
-// PropTypes for the Layout component
-Layout.propTypes = {
-    children: PropTypes.node.isRequired,
-};
-
-export default Layout;</code></pre>
+ * Generates the URL for a screenshot image based on the provided name.
+ * @param {string} name - Name of the screenshot image file.
+ * @returns {string} - The complete URL to the screenshot image.
+*/
+export const getScreenUrl = (name) => {
+    return new URL(`../assets/images/works/screenshots/${name}`, import.meta.url).href;
+};</code></pre>
         </article>
     </section>
 
