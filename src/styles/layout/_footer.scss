@@ -6,7 +6,7 @@
 /*****************/
 
 .footer {
-    background-color: #F2F2F2;
+    background-color: variables.$bg-light-grey;
 
     &__background {
         margin-bottom: -8px;
@@ -17,6 +17,8 @@
     }
 
     &__container {
+        position: relative;
+        z-index: 200;
         margin-top: -40px;
         background-color: #0a0a0a;
     }

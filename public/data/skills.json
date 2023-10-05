@@ -11,18 +11,18 @@
     },
     {
         "id": "3",
-		"icon": "skill-icons:html",
-        "label": "HTML"
+		"icon": "skill-icons:typescript",
+        "label": "TypeScript"
     },
     {
         "id": "4",
-		"icon": "skill-icons:css",
-        "label": "CSS"
+		"icon": "skill-icons:sass",
+        "label": "SASS"
     },
     {
         "id": "5",
-		"icon": "skill-icons:sass",
-        "label": "SASS"
+		"icon": "skill-icons:tailwindcss-dark",
+        "label": "Tailwind"
     },
     {
         "id": "6",
@@ -45,23 +45,8 @@
         "label": "GitHub"
     },
     {
-        "id": "10",
-		"icon": "skill-icons:gitlab-dark",
-        "label": "GitLab"
-    },
-    {
         "id": "11",
 		"icon": "skill-icons:figma-dark",
         "label": "Figma"
-    },
-    {
-        "id": "12",
-		"icon": "skill-icons:vscode-dark",
-        "label": "VSCode"
-    },
-    {
-        "id": "13",
-		"icon": "simple-icons:notion",
-        "label": "Notion"
     }
 ]
